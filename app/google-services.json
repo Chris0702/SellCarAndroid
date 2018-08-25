@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1020707986246",
+    "firebase_url": "https://sellcarandroid.firebaseio.com",
+    "project_id": "sellcarandroid",
+    "storage_bucket": "sellcarandroid.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1020707986246:android:ff63029d5482fcf9",
+        "android_client_info": {
+          "package_name": "com.chris.dx.sellcarandroid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1020707986246-jlu0c4kc598e26fn7f4470reoat5a7ue.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.chris.dx.sellcarandroid",
+            "certificate_hash": "4cf1c8687503cd226307f6e1a2ec199358d69bd7"
+          }
+        },
+        {
+          "client_id": "1020707986246-b8dls4c9pcjf6h76r404s4nb6vne275l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMWOjZ4VblgMoJz-GbieBBz_sZxpmjLD0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1020707986246-b8dls4c9pcjf6h76r404s4nb6vne275l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
