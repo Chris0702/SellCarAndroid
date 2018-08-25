@@ -1,0 +1,241 @@
+#navigationBar{
+	position: relative;
+	height: 55px;
+	max-height: 55px; 
+	background-color: rgb(11,113,191);
+}
+#contentArea{
+	position: relative;
+	height: calc(100% - 360px);
+	background-color: rgb(255,255,255);
+	overflow: auto;
+}
+
+#contentChart{
+	position: relative;
+	height: 250px;
+	background-color: rgb(255,255,255);
+}
+
+#contentTime{
+	position: relative;
+	height: 55px;
+	background-color: rgb(255,255,255);	
+}
+
+#leftTopBtn{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 55px;
+	height: 55px;
+}
+
+#backHome{
+	border: 0;
+	background: transparent;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height:100%;
+	text-overflow: clip;
+	overflow: hidden;
+	background-image: url(../image/back.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: auto 60%;
+}
+
+#bannerTxt{
+	position: absolute;
+	top: 0px;
+	left: 55px;
+	text-align: center;
+	color: rgb(255,255,255);
+	line-height: 55px;
+	font-size: 24px;
+}
+
+#rightTopBtn{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 55px;
+	height: 55px;
+}
+
+/*-------------------*/
+#contentArea ul{
+	list-style: none;
+	margin: 0 auto;
+	padding: 0;
+	width: 100%;
+}
+
+.tagTitleLi{
+	width: 100%;
+	height: 55px;
+	color: rgb(0,0,0);
+	line-height: 55px;
+}
+
+.tagContentLi{
+	width: 100%;
+	height: 55px;
+	line-height: 55px;
+	background-color: rgb(224,224,224);
+	display: none;
+}
+
+.tagColorBar{
+	vertical-align: middle;
+	display: inline-block;
+	margin-left:10px;
+	width: 8px;
+	height: 50px;
+	background-color: rgb(255,0,0); 
+}
+
+.tagText{
+	text-indent: 10px;
+	margin-left: 5px;
+	vertical-align: middle;
+	color: rgb(0,0,0);
+}
+
+
+input[name=openTAG]{
+	display: none;	
+}
+
+input[name=openTAG]:checked ~ .tagTitleLi{
+	background-color: rgb(224,224,224);
+	-webkit-box-shadow: 0px 4px 5px 0px rgba(110,110,110,0.75) inset;
+	-moz-box-shadow: 0px 4px 5px 0px rgba(110,110,110,0.75) inset;
+	box-shadow: 0px 4px 5px 0px rgba(110,110,110,0.75) inset;
+}
+input[name=openTAG]:checked ~ .tagTitleLi .tagText{
+	color: rgb(11,113,191);
+}
+
+input[name=openTAG]:checked ~ .tagContentLi{
+	display: block;
+	border-bottom: 1px solid rgba(110,110,110,0.75);
+}
+
+.tagDetailTable{
+	display:table;
+	width: 100%;
+}
+
+.tagDetailTr{
+	display:table-row;
+}
+
+.tagDetailTd{
+	display:table-cell;
+	position: relative;
+}
+
+.tagDetailTd:nth-child(3n+1){
+
+}
+
+.tagDetailTd:nth-child(3n+2){
+
+}
+
+.tagDetailTd:nth-child(3n){
+
+}
+
+.proptitle{
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	font-size: 12px;
+	color: #999999;
+}
+
+.propvalue{
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	font-size: 10px;
+	color: #999999;
+}
+
+.propvalueBL{
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	font-size: 16px;
+	color: rgb(11,113,191);
+}
+
+
+/*---  time  ---*/
+#contentTime .tagDetailTable{
+	height: 55px;
+	line-height: 55px;
+}
+#contentTime .tagDetailTd:nth-child(4n+1){
+	width: 55px;
+	background-image: url(../image/date_range.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: auto 60%;
+}
+
+#contentTime .tagDetailTd:nth-child(4n+2){
+	width: calc(50% - 55px);
+}
+
+#contentTime .tagDetailTd:nth-child(4n+3){
+	width: 55px;
+	background-image: url(../image/time.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: auto 60%;
+}
+
+#contentTime .tagDetailTd:nth-child(4n){
+	width: calc(50% - 55px);
+}
+
+label:nth-child(12n+1) .tagColorBar{
+	background-color: #A7CC61; 
+}
+label:nth-child(12n+2) .tagColorBar{
+	background-color: #64A3D8; 
+}
+label:nth-child(12n+3) .tagColorBar{
+	background-color: #ED4853; 
+}
+label:nth-child(12n+4) .tagColorBar{
+	background-color: #FFDD5C; 
+}
+label:nth-child(12n+5) .tagColorBar{
+	background-color: #FF834D; 
+}
+label:nth-child(12n+6) .tagColorBar{
+	background-color: #C4B7DA; 
+}
+label:nth-child(12n+7) .tagColorBar{
+	background-color: #AEC18B; 
+}
+label:nth-child(12n+8) .tagColorBar{
+	background-color: #7D9DB7; 
+}
+label:nth-child(12n+9) .tagColorBar{
+	background-color: #B46267; 
+}
+label:nth-child(12n+10) .tagColorBar{
+	background-color: #ECDB9B; 
+}
+label:nth-child(12n+11) .tagColorBar{
+	background-color: #D19378; 
+}
+label:nth-child(12n+12) .tagColorBar{
+	background-color: #C2BBCD; 
+}

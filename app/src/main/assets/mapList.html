@@ -1,0 +1,73 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<title>WebAccess</title>
+<link rel="stylesheet" type="text/css" href="./styles/commonStyle.css" />
+<link rel="stylesheet" type="text/css" href="./styles/mapList.css" />
+<script type="text/javascript" src="./scripts/lib/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="./scripts/lib/jquery-lang-js/jquery-lang.js"></script>
+<script type="text/javascript" src="./scripts/util/dashboardMui.js"></script>
+<script src="./scripts/Language/defaultLang.js"></script>
+<script src="./scripts/Language/en.js"></script>
+<script src="./scripts/Language/zh_cn.js"></script>
+<script src="./scripts/Language/zh_tw.js"></script>
+<script src="./scripts/Language/ja.js"></script>
+<script src="./scripts/Language/ko.js"></script>
+<script src="./scripts/Language/fr.js"></script>
+<script type="text/javascript" src="./scripts/util/callNativeInterface.js"></script>
+<script type="text/javascript" src="./scripts/util/jsAppInterface.js"></script>
+<script type="text/javascript" src="./scripts/page/mapList.js"></script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+	mapList.init();
+});
+
+</script>
+</head>
+<body>
+<div id="navigationBar">
+	<div id="leftTopBtn">
+		<button id="backHome" ></button>
+	</div>
+	<div id="bannerTxt"><span jql>t_0036_MapList</span></div>
+	<div id="rightTopBtn"></div>	
+</div>
+<div id="contentArea">
+	<div id="pageBar">
+		<div class="displayTable">
+			<div class="displayTr">
+				<div class="displayTd pbLeft">
+					<select id="nodeList">
+					</select>
+				</div>
+				<div class="displayTd pbRight">
+				</div>
+			</div>
+		</div>		
+	</div>
+	<div id="logList">
+		<ul id="mapList">
+			<!--<li class="mapItem">
+				<span class="itemSelect g"></span>
+				<span class="itemText">Map 1</span>
+				<button class="itemNext"></button>
+				<input type="hidden" name="mapType">
+				<input type="hidden" name="mapName">
+			</li>
+			<li class="mapItem">
+				<span class="itemSelect b"></span>
+				<span class="itemText">Map 2</span>
+				<button class="itemNext"></button>
+				<input type="hidden" name="mapType">
+				<input type="hidden" name="mapName">
+			</li>-->
+		</ul>
+	</div>
+	<div id="ctrlBar"></div>
+</div>
+
+</body>
+</html>

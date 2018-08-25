@@ -2,6 +2,7 @@ package com.chris.dx.sellcarandroid.service;
 
 import android.util.Log;
 
+import com.chris.dx.sellcarandroid.define.Constants;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.FirebaseInstanceIdService;
 
@@ -17,13 +18,10 @@ public class FirebaseInstanceIDService extends FirebaseInstanceIdService {
 
 //    Factory factory = Factory.getInstance();
 //    Model controlModel;
-//    SystemInfo systemInfo;
-
+//    SystemInfo systemInfo;;
     @Override
     public void onCreate() {
         super.onCreate();
-        String firebaseToken = FirebaseInstanceId.getInstance().getToken();
-        Log.d("debug", "Firebase   Token111111111111:" + firebaseToken);
         createObj();
     }
 

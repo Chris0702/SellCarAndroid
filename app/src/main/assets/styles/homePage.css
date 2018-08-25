@@ -1,0 +1,191 @@
+body{
+	background: -webkit-linear-gradient(rgb(34,127,197) 0%, rgb(223,231,245) 50%, rgb(34,127,197) 100%); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(rgb(34,127,197) 0%, rgb(223,231,245) 50%, rgb(34,127,197) 100%); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(rgb(34,127,197) 0%, rgb(223,231,245) 50%, rgb(34,127,197) 100%); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(rgb(34,127,197) 0%, rgb(223,231,245) 50%, rgb(34,127,197) 100%); /* Standard syntax (must be last) */
+}
+#navigationBar{
+	position: relative;
+	height: 55px;
+	max-height: 55px; 
+	background-color: rgb(11,113,191);
+	/*background-image: url(../image/webaccess.png);*/
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+}
+#contentArea{
+	position: relative;
+	height: calc(100% - 55px);
+	/*background-color: rgb(57,73,171);*/
+}
+
+
+#leftTopBtn{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 55px;
+	height: 55px;
+}
+
+#bannerTxt{
+	text-align: center;
+	color: rgb(255,255,255);
+	line-height: 55px;
+	font-size: 24px;
+	letter-spacing: 2px;　
+}
+
+#rightTopBtn{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 55px;
+	height: 55px;
+}
+
+#settingBtn{
+	border: 0;
+	background: transparent;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height:100%;
+	text-overflow: clip;
+	overflow: hidden;
+	background-image: url(../image/setting.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 60%;
+}
+
+#funcListArea{
+	margin:0 auto;
+	width: calc(100% - 20px);
+	height: 100%;
+	overflow: auto;
+}
+#functionList{
+	padding: 0;
+	list-style: none;
+	width: 100%;
+	height: auto;
+}
+
+#functionList li{
+	/*width: 26vw;*/
+	position: relative;
+	height:10vh;
+	line-height:10vh;
+	background-color: rgb(254,254,254);
+	border-radius: 5px;
+	font-size: 3vh;
+	margin-bottom: 10px;
+}
+
+#functionList li:active{
+	background-color: #BED5ED;
+}
+
+.funcIcon{
+	position: absolute;
+	left: 0px;
+	height: 100%;
+	width: 20vw;
+	text-align: center;
+	background-image: url(../image/defaultIcon.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: auto 90%;
+}
+
+.funcText{
+	position: absolute;
+	left: 20vw;
+	text-align: left;
+	width: calc(100% - 20vw);
+	height: 100%;
+	line-height: 100%;
+}
+.vLine{
+	float: left;
+	display: inline-block;
+	line-height: 10vw;
+	width: 1px;
+	height: calc(100% - 2vh);
+	border-left: 1px solid #0B71BF;
+	margin-top: 1vh;
+}
+.funcTitle{
+	margin-left: 5vw;
+	line-height: 10vh;
+	font-size: 1em;
+}
+
+
+
+/**/
+#actionLog .funcIcon{
+	background-image: url(../image/Action_log.png);
+}
+#alarmLog .funcIcon{
+	background-image: url(../image/Alarm_log.png);
+}
+#alarmSummary .funcIcon{
+	background-image: url(../image/Alarm_Summary.png);
+}
+#trendList .funcIcon{
+	background-image: url(../image/Trend.png);
+}
+#dashboard .funcIcon{
+	background-image: url(../image/Dashboard.png);
+}
+#tagsInfoGroup .funcIcon{
+	background-image: url(../image/Tag_info.png);
+}
+#mapList .funcIcon{
+	background-image: url(../image/Google_Map.png);
+}
+#dataLogList .funcIcon{
+	background-image: url(../image/historyTrend.png);
+}
+#stationStatus .funcIcon{
+	background-image: url(../image/stationStatus.png);
+}
+#nodeStatus .funcIcon{
+	background-image: url(../image/scadaNode.png);
+}
+
+
+@media (min-height: 550px) {
+	#functionList li{
+		height:55px;
+		line-height:55px;
+		background-color: rgb(254,254,254);
+		border-radius: 5px;
+		font-size: 3vh;
+		margin-bottom: 10px;
+	}
+
+	.funcIcon{
+		position: absolute;
+		left: 0px;
+	}
+
+	.funcText{
+		position: absolute;
+		left: 20vw;
+		text-align: left;
+		width: calc(100% - 20vw);
+		height: 100%;
+		line-height: 55px;
+	}
+
+	.funcTitle{
+		line-height: 55px;
+		font-size: 24px;
+	}
+}
+@media (min-width: 768px) and (max-width: 979px) {
+}

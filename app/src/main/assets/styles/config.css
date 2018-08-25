@@ -1,0 +1,340 @@
+#navigationBar{
+	position: relative;
+	height: 55px;
+	max-height: 55px; 
+	background-color: rgb(11,113,191);
+}
+#contentArea{
+	position: relative;
+	height: calc(100% - 55px);
+	/*background-color: rgb(255,255,255);*/
+	overflow: auto;
+}
+
+#leftTopBtn{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 55px;
+	height: 55px;
+}
+
+#backHome{
+	border: 0;
+	background: transparent;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height:100%;
+	text-overflow: clip;
+	overflow: hidden;
+	background-image: url(../image/home.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: auto 60%;
+}
+
+#bannerTxt{
+	text-align: center;
+	color: rgb(255,255,255);
+	line-height: 55px;
+	font-size: 24px;
+}
+
+#rightTopBtn{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 55px;
+	height: 55px;
+}
+
+#funcListArea{
+	margin: 0 auto;
+	width: 100%;
+	overflow-y: auto;
+	overflow-x: hidden;
+	margin-bottom: 5vh;
+}
+
+#funcList{
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+}
+
+#funcList > li{
+	position: relative;
+	min-height: 10vh;
+	border-bottom: 1px solid rgb(153, 153, 153);
+}
+
+#funcList > li > span{
+	vertical-align: bottom;
+    height: 5vh;
+    display: inline-block;
+}
+
+.titleList{
+
+}
+
+.titleList.currentOpen{
+	-webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+}
+
+#funcList .titleList.currentOpen + .contentList{
+	margin-top: 4px;
+	border-bottom: 12px solid rgb(158,158,158);;
+}
+
+.currentOpen .titleBtn{
+	color: rgb(11,113,191);
+}
+
+.contentList{
+	/*background-color: #E8EAF6;*/
+	display: none;
+}
+
+
+.contentList .displayTable{
+	width: 100%;
+}
+
+.iconBtn{
+	float: left;
+	height: 10vh;
+	width: 10vh;
+	background-image: url(../image/defaultIcon.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: auto 5vh;
+}
+.titleBtn{
+	float: left;
+	height: 10vh;
+	width: calc(100% - 20vh);
+	overflow: hidden;
+	line-height: 10vh;
+	font-size: 1em;
+	font-weight: bold;
+}
+.openBtn{
+	float: left;
+	height: 10vh;
+	width: 10vh;
+	overflow: hidden;
+	background-image: url(../image/expand_more.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: auto 5vh;
+}
+
+.openBtn.opened{
+	background-image: url(../image/expand_less.png);
+}
+
+#langType, #versionType{
+	text-align: center;
+}
+
+#langType  .displayTd, #versionType  .displayTd{
+	border-bottom: 1px solid #565656;
+}
+.langBtn{
+	text-align: left;
+    text-indent: 30px;
+	background-color: transparent;
+    border: none;
+    /*border-radius: 5px;*/
+    height: 8vh;
+    color: #000000;
+    min-width: 30vw;
+    margin: 5px 0;
+    width: calc(100% - 20px);
+    font-size: 1em;
+    overflow: hidden;
+}
+.langBtn.selectLang{
+	/*background-color: rgb(204,207,227);*/
+	background-image: url(../image/check_l.png);
+	background-position: right;
+	background-repeat: no-repeat;
+	background-size: auto 4vh;
+}
+
+
+#langBtn .iconBtn{
+	background-image: url(../image/language_setting.png);
+}
+
+#homeListBtn .iconBtn{
+	background-image: url(../image/APP_setting.png);
+}
+
+#aboutBtn .iconBtn{
+    background-image: url(../image/about.png);
+}
+
+#logoutBtn .iconBtn{
+	background-image: url(../image/logout.png);
+}
+
+#homeAppList .displayTd{
+	border-bottom: 1px solid #565656;
+}
+#homeAppList .displayTd:nth-child(1){}
+#homeAppList .displayTd:nth-child(2){width: 9vh;}
+.funcBtn{
+	position: relative;
+    height: 8vh;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.funcIcon{
+	float: left;
+	height: 100%;
+	width: 100px;
+	text-align: center;
+	background-image: url(../image/defaultIcon.png);
+	background-position: 30px center;
+	background-repeat: no-repeat;
+	background-size: auto 8vh;
+}
+
+.funcText{
+	float: right;
+	text-align: left;
+	width: calc(100% - 100px);
+	height: 100%;
+	line-height: 8vh;
+	text-indent: 0px;
+	font-size: 1em;
+}
+.vLine{
+	float: left;
+	display: inline-block;
+	line-height: 10vw;
+	width: 1px;
+	height: calc(100% - 2vh);
+	/*border-left: 1px solid #3949AB;*/
+	margin-top: 1vh;
+}
+.func{
+	display: none;
+}
+.func + .checkboxIcon{
+	display: inline-block;
+    background-image: url(../image/un-check.png);
+    background-size: 60% 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 8vh;
+    height: 8vh;
+    margin: 10px 0;
+	/*vertical-align: middle;*/
+}
+.func:checked + span{
+	background-image: url(../image/check.png);
+}
+
+/**/
+#nodeStatus .funcIcon{
+    background-image: url(../image/scadaNode.png);
+}
+#actionLog .funcIcon{
+	background-image: url(../image/Action_log.png);
+}
+#alarmLog .funcIcon{
+	background-image: url(../image/Alarm_log.png);
+}
+#alarmSummary .funcIcon{
+	background-image: url(../image/Alarm_Summary.png);
+}
+#trend .funcIcon{
+	background-image: url(../image/Trend.png);
+}
+#dashboard .funcIcon{
+	background-image: url(../image/Dashboard.png);
+}
+#tagsInfoGroup .funcIcon{
+	background-image: url(../image/Tag_info.png);
+}
+#map .funcIcon{
+	background-image: url(../image/Google_Map.png);
+}
+#dataLog .funcIcon{
+	background-image: url(../image/historyTrend.png);
+}
+#stationStatus .funcIcon{
+	background-image: url(../image/stationStatus.png);
+}
+
+/* hide phase 2 function*/
+#dataLog, #stationStatus{
+	display: none;
+}
+
+@media (min-height: 550px) {
+
+	#funcList > li{
+		position: relative;
+		min-height: 55px;
+	}
+    
+    #funcList > li.contentList {
+        min-height: 50px;
+    }
+
+	#funcList > li > span{
+		vertical-align: bottom;
+    	height: 27px;
+    	display: inline-block;
+	}
+
+	.iconBtn{
+		height: 55px;
+		width: 55px;
+		background-size: auto 50%;
+	}
+	.titleBtn{
+		height: 55px;
+		width: calc(100% - 110px);
+		line-height: 55px;
+		font-size: 16px;
+	}
+	.openBtn{
+		height: 55px;
+		width: 55px;
+		background-size: auto 50%;
+	}
+	.funcBtn{
+    	height: 40px;
+	}
+
+	.funcIcon{
+		background-size: auto 40px;
+	}
+
+	.funcText{
+		line-height: 40px;
+		font-size: 16px;
+	}
+
+	.func + .checkboxIcon{
+	    background-size: 60% 60%;
+    	width: 40px;
+    	height: 40px;
+	}
+
+	#homeAppList .displayTd:nth-child(2){width: 50px;}
+	.langBtn{
+	    height: 40px;
+    	font-size: 16px;
+	}
+}

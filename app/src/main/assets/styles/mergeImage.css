@@ -1,0 +1,20 @@
+body{
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    /*min-width:320px;*/
+    overflow-y: scroll;
+　   overflow-x: hidden;
+}
+
+/*#question{
+    position: relative;
+    width: 50%;
+    height: 100%;
+}
+
+#next{
+    position: relative;
+    width: 50%;
+    height: 100%;
+}*/

@@ -1,0 +1,33 @@
+[type="file"] {
+   display:none;
+}
+
+#uploadImage{
+   display:none;
+}
+
+#uploadDiv{
+    /*height: 60px;
+    text-align:center;
+    line-height:60px;
+    font-size: 20px;
+    background: transparent;
+    border-color: transparent;*/
+    font-size: 20px;
+}
+
+/*.uploadBtn{
+    height: 60px;
+    width: 100px;
+    text-align:center;
+    line-height:60px;
+    font-size: 20px;
+    background: #00fa6a;
+    border-color: transparent;
+    border-radius:50px;
+}*/
+
+#fileName{
+    height: 50px;
+    width: 300px;
+}

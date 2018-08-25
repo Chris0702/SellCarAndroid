@@ -1,0 +1,301 @@
+#navigationBar{
+	position: relative;
+	height: 55px;
+	max-height: 55px; 
+	background-color: rgb(11,113,191);
+}
+#contentArea{
+	position: relative;
+	height: calc(100% - 375px);
+	background-color: rgb(255,255,255);
+	overflow: hidden;
+}
+
+#contentChart{
+	position: relative;
+	height: 250px;
+	overflow: hidden;
+}
+
+#contentTime{
+	position: relative;
+	height: 70px;
+	overflow: hidden;
+}
+
+#leftTopBtn{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 55px;
+	height: 55px;
+}
+
+#backHome{
+	border: 0;
+	background: transparent;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height:100%;
+	text-overflow: clip;
+	overflow: hidden;
+	background-image: url(../image/back.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: auto 60%;
+}
+
+#bannerTxt{
+	position: absolute;
+	top: 0px;
+	left: 55px;
+	text-align: center;
+	color: rgb(255,255,255);
+	line-height: 55px;
+	font-size: 24px;
+}
+
+#rightTopBtn{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 55px;
+	height: 55px;
+}
+
+#openSettingBtn{
+	border: 0;
+	background: transparent;
+	padding: 0;
+	margin: 0;
+	width: 55px;
+	height:100%;
+	text-overflow: clip;
+	overflow: hidden;
+	background-image: url(../image/edit.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 60%;
+	display: inline-block;
+}
+
+/*-------------------*/
+#contentArea ul{
+	list-style: none;
+	margin: 0 auto;
+	padding: 0;
+	width: 100%;
+}
+
+.tagTitleLi{
+	width: 100%;
+	height: 55px;
+	color: rgb(0,0,0);
+	line-height: 55px;
+}
+
+.tagContentLi{
+	width: 100%;
+	height: 55px;
+	line-height: 55px;
+	background-color: rgb(224,224,224);
+	display: none;
+}
+
+.tagColorBar{
+	vertical-align: middle;
+	display: inline-block;
+	margin-left:10px;
+	width: 8px;
+	height: 50px;
+	background-color: rgb(255,0,0); 
+}
+
+.tagText{
+	text-indent: 10px;
+	margin-left: 5px;
+	vertical-align: middle;
+	color: rgb(0,0,0);
+}
+
+
+input[name=openTAG]{
+	display: none;	
+}
+
+input[name=openTAG]:checked ~ .tagTitleLi{
+	background-color: rgb(224,224,224);
+	-webkit-box-shadow: 0px 4px 5px 0px rgba(110,110,110,0.75) inset;
+	-moz-box-shadow: 0px 4px 5px 0px rgba(110,110,110,0.75) inset;
+	box-shadow: 0px 4px 5px 0px rgba(110,110,110,0.75) inset;
+}
+input[name=openTAG]:checked ~ .tagTitleLi .tagText{
+	color: rgb(11,113,191);
+}
+
+input[name=openTAG]:checked ~ .tagContentLi{
+	display: block;
+	border-bottom: 1px solid rgba(110,110,110,0.75);
+}
+
+.tagDetailTable{
+	display:table;
+	width: 100%;
+}
+
+.tagDetailTr{
+	display:table-row;
+}
+
+.tagDetailTd{
+	display:table-cell;
+	position: relative;
+}
+
+.tagContentLi .tagDetailTd:nth-child(3n+1){
+
+}
+
+.tagContentLi .tagDetailTd:nth-child(3n+2){
+
+}
+
+.tagContentLi .tagDetailTd:nth-child(3n){
+
+}
+
+.proptitle{
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	font-size: 12px;
+	color: #999999;
+}
+
+.propvalue{
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	font-size: 10px;
+	color: #999999;
+}
+
+.propvalueBL{
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	font-size: 16px;
+	color: rgb(11,113,191);
+}
+
+/*---  time  ---*/
+#contentTime > .tagDetailTable{
+	width: 100%;
+	height: 48px;
+	line-height: 48px;
+	border-spacing: 10px;
+    border-collapse: separate;
+}
+#contentTime > .tagDetailTable > .tagDetailTr > .tagDetailTd:nth-child(2n+1){
+	width: 25%;
+	border:1px solid rgb(11,113,191);
+	border-radius: 5px;
+}
+
+#contentTime > .tagDetailTable > .tagDetailTr > .tagDetailTd:nth-child(2n){
+	width: 75%;
+	border:1px solid rgb(11,113,191);
+	border-radius: 5px;
+}
+
+#sampleRateTitle{
+	margin-top: 3px;
+	line-height: 10px;
+	text-align: center;
+	font-size: 10px;
+	color: rgb(11,113,191);
+}
+
+#sampleRateValue{
+	line-height: 35px;
+	text-align: center;
+	font-size: 16px;
+}
+
+#seInterval{
+	border-spacing: 0px;
+    border-collapse: separate;
+}
+
+#seInterval .tagDetailTd:nth-child(3n+1){width: calc(50% - 8px);}
+#seInterval .tagDetailTd:nth-child(3n+2){width: 16px;position: relative;}
+#seInterval .tagDetailTd:nth-child(3n){width: calc(50% - 8px);}
+
+#seTitle{
+	margin-top: 3px;
+	line-height: 10px;
+	text-align: center;
+	font-size: 10px;
+	color: rgb(11,113,191);	
+}
+
+#seTime{
+	
+	text-align: center;
+	
+}
+
+#dash{
+	text-align: center;
+	line-height: 20px;
+    top: 8px;
+    position: relative;
+}
+
+.seDateText{
+	line-height: 18px;
+	font-size: 16px;
+}
+
+.seTimeText{
+	line-height: 16px;
+	font-size: 14px;
+}
+
+label:nth-child(12n+1) .tagColorBar{
+	background-color: #A7CC61; 
+}
+label:nth-child(12n+2) .tagColorBar{
+	background-color: #64A3D8; 
+}
+label:nth-child(12n+3) .tagColorBar{
+	background-color: #ED4853; 
+}
+label:nth-child(12n+4) .tagColorBar{
+	background-color: #FFDD5C; 
+}
+label:nth-child(12n+5) .tagColorBar{
+	background-color: #FF834D; 
+}
+label:nth-child(12n+6) .tagColorBar{
+	background-color: #C4B7DA; 
+}
+label:nth-child(12n+7) .tagColorBar{
+	background-color: #AEC18B; 
+}
+label:nth-child(12n+8) .tagColorBar{
+	background-color: #7D9DB7; 
+}
+label:nth-child(12n+9) .tagColorBar{
+	background-color: #B46267; 
+}
+label:nth-child(12n+10) .tagColorBar{
+	background-color: #ECDB9B; 
+}
+label:nth-child(12n+11) .tagColorBar{
+	background-color: #D19378; 
+}
+label:nth-child(12n+12) .tagColorBar{
+	background-color: #C2BBCD; 
+}

@@ -1,0 +1,47 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<title>imageMerge</title>
+<link rel="stylesheet" href="../styles/bootstrap-3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../styles/home.css" />
+<!-- <link rel="stylesheet" type="text/css" href="./styles/commonStyle.css" />
+<link rel="stylesheet" type="text/css" href="./styles/loginAction.css" /> -->
+<script type="text/javascript" src="../scripts/lib/jquery-3.1.1.min.js"></script>
+<!-- 
+<script type="text/javascript" src="../scripts/lib/jquery-lang-js/jquery-lang.js"></script>
+<script type="text/javascript" src="../scripts/util/dashboardMui.js"></script>
+ -->
+<script type="text/javascript" src="../scripts/util/callNativeInterface.js"></script>
+<script type="text/javascript" src="../scripts/util/jsAppInterface.js"></script>
+<script type="text/javascript" src="../scripts/page/home.js"></script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+	home.drawBackground();
+	home.init();
+	// loginAction.drawBackground();
+	// //$(window).on('resize',loginAction.drawBackground);
+	// loginAction.init();
+});
+
+</script>
+</head>
+<body>
+<div id="backgroundCanvas">
+	<div id="grad1"></div>
+	<div id="grad2"></div>
+	<!--<div id="gradBackgroud"></div>-->
+</div>
+<div id="top">
+	<div id="gradBackgroud"></div>
+</div>
+<div id="bottom">
+	<button id = "introduction" class="btn btn-lg btn-success btn-block">簡介</button>
+	<button id = "mergeImage" class="btn btn-lg btn-success btn-block">合併圖片</button>
+	<button id = "upload" class="btn btn-lg btn-success btn-block">上傳圖片</button>
+	<button id = "about" class="btn btn-lg btn-success btn-block">關於</button>
+</div>
+</body>
+</html>

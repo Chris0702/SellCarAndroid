@@ -1,0 +1,291 @@
+#navigationBar{
+	position: relative;
+	height: 55px;
+	max-height: 55px; 
+	background-color: rgb(11,113,191);
+}
+#contentArea{
+	position: relative;
+	height: calc(100% - 55px);
+	background-color: rgb(255,255,255);
+}
+
+#leftTopBtn{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 55px;
+	height: 55px;
+	display: none;
+}
+
+#backHome{
+	border: 0;
+	background: transparent;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height:100%;
+	text-overflow: clip;
+	overflow: hidden;
+	background-image: url(../image/back.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: auto 60%;
+}
+
+#bannerTxt{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	text-align: center;
+	color: rgb(255,255,255);
+	line-height: 55px;
+	font-size: 24px;
+	width: 100%;
+}
+
+#bannerTxt span{
+	text-align: center;
+	color: rgb(255,255,255);
+	line-height: 55px;
+	font-size: 24px;
+	text-indent: 5px;
+}
+
+#rightTopBtn{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 55px;
+	height: 55px;
+}
+
+#inputArea{
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	height: calc(100% - 10vh);
+	overflow-y: auto;
+	padding-top: 10px;
+}
+
+#btnArea{
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	height: 10vh;
+	line-height: 10vh;
+	text-align: right;
+	background-color: rgb(108,170,217);
+}
+
+#inputArea > div{
+	position: relative;
+	margin: 0 auto;
+	width: calc(100% - 40px);
+	line-height: 40px;
+}
+
+#cancelBtn{
+	margin-top: 3vh;
+	background-color: #FFFFFF;
+	padding: 0 5px;
+	margin: 0 5px;
+	width: 40vw;
+	height:5vh;
+	line-height: 5vh;
+	text-overflow: clip;
+	overflow: hidden;
+	color: rgb(11,113,191);
+	border-radius: 5vh;
+	border: 2px solid rgb(11,113,191);
+}
+
+#applyBtn{
+	margin-top: 3vh;
+	background-color: #FFFFFF;
+	padding: 0 5px;
+	margin: 0 10px;
+	width: 40vw;
+	height:5vh;
+	line-height: 5vh;
+	text-overflow: clip;
+	overflow: hidden;
+	color: rgb(11,113,191);
+	border-radius: 5vh;
+	border: 2px solid rgb(11,113,191);
+}
+
+#cancelBtn:active,#applyBtn:active{
+	background-color: rgb(11,113,191);
+	border-color: rgb(11,113,191);
+	color:#FFFFFF;
+}
+
+
+.detailTable{
+	display:table;
+	width: 100%;
+}
+
+.detailTr{
+	display:table-row;
+}
+
+.detailTd{
+	display:table-cell;
+	position: relative;
+}
+
+#btnArea > .detailTable{
+	height: 100%;
+}
+
+#btnArea .detailTr{
+	text-align: center;
+}
+
+.itemTitleText{
+	font-size: 18px;
+	color:rgb(0,0,0); 
+}
+
+/*--------button set--------*/
+/*ul.buttonSetBlock{
+	display: block;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	width: 100%;
+    height: 40px;
+    color: rgb(11,113,191);
+}
+
+ul.buttonSetBlock > li {
+	border-top:1px solid rgb(11,113,191);
+	border-right:1px solid rgb(11,113,191);
+	border-bottom:1px solid rgb(11,113,191);
+	display: inline-block;
+	float: left;
+	height: 30px;
+	text-align: center;
+}
+
+ul.buttonSetBlock > li:first-child {
+	border-left:1px solid rgb(11,113,191);
+	border-radius: 10px 0px 0px 10px;
+}
+
+ul.buttonSetBlock > li:last-child {
+	border-radius: 0px 10px 10px 0px;
+}
+
+ul.buttonSetBlock > li > span{
+	margin-top: 5px;
+    display: inline-block;
+} 
+
+#dataUnit li{
+	width: calc(25% - 2px);
+}*/
+.buttonSetBlock input[type=radio] {
+  position: absolute;
+  visibility: hidden;
+  display: none;
+}
+
+.buttonSetBlock label {
+  color: rgb(11,113,191);
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 5px 0px;
+  float: left;
+  width: calc(25% - 2px);
+  text-align: center;
+  line-height: 30px;
+}
+
+.buttonSetBlock input[type=radio]:checked + label{
+  color: rgb(11,113,191);
+  background: rgb(224,224,224);
+}
+
+.buttonSetBlock label + input[type=radio] + label {
+  border-left: solid 1px rgb(11,113,191);
+}
+.buttonSetBlock.radio-group {
+  border: solid 1px rgb(11,113,191);
+  display: inline-block;
+  /*margin: 20px;*/
+  border-radius: 5px;
+  overflow: hidden;
+  width: 100%;
+}
+
+#dataInterval{
+	height: 30px;
+	min-height: 5vh;
+}
+
+#intervalVal{
+	position: absolute;
+	border: solid 1px rgb(11,113,191);
+	border-radius: 5px;
+	width: 50px;
+	right: 80px;
+	height: 4vh;
+	min-height: 35px;
+}
+#itemDataUnit{
+	position: absolute;
+	line-height: 40px;
+	display: inline-block;
+	width: 80px;
+	right: 0px;
+	text-indent:10px;
+	color: rgb(11,113,191);
+}
+
+#stDate, #endDate{
+	position: absolute;
+	right: 150px;
+}
+
+#stTime, #endTime{
+	position: absolute;
+	right: 0px;
+}
+
+input.seDateTime{
+	border-bottom: solid 1px rgb(11,113,191);
+	width: 140px;
+	text-align: center;
+	height: 4vh;
+	min-height: 35px;
+}
+
+@media (min-height: 550px) {
+	#inputArea{
+		height: calc(100% - 55px);
+	}
+	#btnArea{
+		height: 55px;
+		line-height: 55px;
+	}
+	#cancelBtn{
+		margin-top: 14px;
+		height:27px;
+		line-height: 27px;
+		border-radius: 27px;
+	}
+
+	#applyBtn{
+		margin-top: 14px;
+		height:27px;
+		line-height: 27px;
+		border-radius: 27px;
+	}
+}

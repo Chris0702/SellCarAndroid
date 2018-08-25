@@ -1,0 +1,262 @@
+#navigationBar, #mlNavigationBar{
+	position: relative;
+	height: 55px;
+	max-height: 55px; 
+	background-color: rgb(11,113,191);
+}
+#contentArea, #mlContentArea{
+	position: relative;
+	height: calc(100% - 55px);
+	background-color: rgb(255,255,255);
+}
+
+#leftTopBtn, #mlLeftTopBtn{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 55px;
+	height: 55px;
+}
+
+#backHome, #mlBackHome{
+	border: 0;
+	background: transparent;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height:100%;
+	text-overflow: clip;
+	overflow: hidden;
+	background-image: url(../image/back.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: auto 60%;
+}
+
+
+#bannerTxt{
+	position: absolute;
+	top: 0px;
+	left: 55px;
+	text-align: center;
+	color: rgb(255,255,255);
+	line-height: 55px;
+	font-size: 24px;
+}
+
+#rightTopBtn{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 115px;
+	height: 55px;
+}
+
+#openLabelBtn{
+	border: 0;
+	background: transparent;
+	padding: 0;
+	margin: 0;
+	width: 55px;
+	height:100%;
+	text-overflow: clip;
+	overflow: hidden;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 60%;
+	display: inline-block;
+}
+
+#openLabelBtn.hideMarker{
+	background-image: url(../image/hide_marker.png);
+}
+
+#openLabelBtn.openMarker{
+	background-image: url(../image/open_marker.png);
+}
+
+#openMListBtn{
+	border: 0;
+	background: transparent;
+	padding: 0;
+	margin: 0;
+	width: 55px;
+	height:100%;
+	text-overflow: clip;
+	overflow: hidden;
+	background-image: url(../image/marker_list.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 60%;
+	display: inline-block;
+}
+
+#pageBar{
+	height: 10vh;
+    min-height: 50px;
+    width: calc(100% - 20px);
+    font-size: 1em;
+    line-height: 30px;
+    margin: 0 auto;
+}
+
+#pageBar .displayTable{
+	top: 10px;
+    position: relative;
+    width: 100%;
+}
+
+
+.pbRight{
+	width: 50%;
+	text-align: right;
+	white-space: nowrap;
+}
+.pbLeft{
+	width: 50%;
+	text-align: left;	
+}
+.pbRight > span{
+	background-color: #3949AB;
+	display: inline-block;
+    border-radius: 5vh;
+    border: 2px solid #3949AB;
+}
+
+#logList{
+	margin: 0 auto;
+	height: 100%;
+	max-height:  100%;
+	width: 100%;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+#map{
+	height:100%;
+	width:100%
+}
+div.markerdiv{
+	position:absolute;
+	text-align:center;
+	white-space:nowrap;
+	border:solid 1px #ABABAB;
+	background-color:#FFFFFF;
+	border-radius: 5px;
+	overflow:hidden;
+}
+div.mt {
+	font-family:Arial;
+	font-weight:bold;
+	font-size:12pt;
+	color:#000000;
+}
+div.mln{
+	position:absolute;
+	left:3px;
+	background-color:#FFFFFF;
+	white-space:nowrap;
+	text-align:right;
+	font-family:Arial;
+	font-size:10pt;
+	color:#000000;
+}
+div.mlt{
+	position:absolute;
+	background-color:#FFFFFF;
+	margin-left:3px;
+	white-space:nowrap;
+	text-align:left;
+	font-weight:bold;
+	font-family:Arial;
+	font-size:10pt;
+	color:#000000;
+}
+
+
+/*-----------------*/
+#markerListPage{
+	position:absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: rgb(255,255,255);
+	display: none;
+}
+#mlPageBar{
+	height: 10vh;
+    min-height: 50px;
+    width: 100%;
+    font-size: 1em;
+    line-height: 30px;
+    margin: 0 auto;
+    background-color:rgb(224,224,224);
+}
+#mlLogList{
+	margin: 0 auto;
+	height: calc(100% - 10vh);
+	max-height:  calc(100% - 50px);
+	width: 100%;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+
+#markerListUl{
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+}
+
+#markerListUl > li{
+	position: relative;
+	height:10vh;
+	/*border-radius: 5px;*/
+	font-size: 3vh;
+	border-bottom: 1px solid #999999;
+}
+
+.itemSelect{
+	display: inline-block;
+	width: 10vh;
+	height: 10vh;
+	line-height: 10vh;
+	font-size: 5vh;
+	text-align: center;
+	background-image: url(../image/du.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: auto 60%;
+}
+
+.itemText{
+	margin-left: 3vh;
+	height: 10vh;
+	line-height: 10vh;
+	font-size: 1em;
+	vertical-align: top;
+}
+
+@media (min-height: 550px) {
+	#mlPageBar{
+		height: 55px;
+	}
+	#markerListUl > li{
+		height:55px;
+		font-size: 24px;
+	}
+	.itemSelect{
+		width: 55px;
+		height: 55px;
+		line-height: 55px;
+		font-size: 27px;
+	}
+
+	.itemText{
+		margin-left: 16px;
+		height: 55px;
+		line-height: 55px;
+		font-size: 24px;
+	}
+}

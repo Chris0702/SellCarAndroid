@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Socket.IO chat</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font: 13px Helvetica, Arial; }
+      form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
+      form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
+      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
+      #messages { list-style-type: none; margin: 0; padding: 0; }
+      #messages li { padding: 5px 10px; }
+      #messages li:nth-child(odd) { background: #eee; }
+    </style>
+  </head>
+  <body>
+    <ul id="messages"></ul>
+    <form action="">
+      <input id="m" autocomplete="off" /><button>Send</button>
+      <div>
+        <img class="preview" style="max-width: 150px; max-height: 150px;">
+        <img id="ItemPreview" src=""  style="max-width: 150px; max-height: 150px;"/>
+
+    </div>
+    </form>
+    <!-- <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script> -->
+     <script src="/socket.io/socket.io.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script>
+     //var socket = io();
+     var socket = io('/chat');
+    //console.log(<%=socketAddr %>);
+    //var socket = io.connect('locoalhost:3000/chat');
+    $('form').submit(function(){
+      if($('#m').val()=='boyFindGirl')
+      {
+         socket.emit('findType', 'boyFindGirl');
+      }
+      else if($('#m').val()=='girlFindBoy')
+      {
+         socket.emit('findType', 'girlFindBoy');
+      }
+      else if($('#m').val()=='boyFindBoy')
+      {
+         socket.emit('findType', 'boyFindBoy');
+      }
+      else if($('#m').val()!='')
+      {
+         socket.emit('chatMessage', $('#m').val());
+      }
+      $('#m').val('');
+      return false;
+    });
+    socket.on('chatMessage', function(msg){
+      $('#messages').append($('<li>').text(msg));
+    });
+    socket.on('image', function(msg){
+      console.log('on image');
+      console.log(msg);
+      console.log(new Uint8Array(msg.buffer));
+      $('#messages').append($('<li>').text(msg.buffer));
+     var ItemPreview= document.getElementById("ItemPreview")
+     // ItemPreview.src =  'data:image/jpeg;base64,'+new Uint8Array(msg.buffer);
+      // $('.preview').attr('src', msg.buffer);
+    });
+    socket.on('systemMessage', function(msg){
+      $('#messages').append($('<li>').text(msg));
+    });
+
+    function encode (input) {
+    var keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+    var output = "";
+    var chr1, chr2, chr3, enc1, enc2, enc3, enc4;
+    var i = 0;
+
+    while (i < input.length) {
+        chr1 = input[i++];
+        chr2 = i < input.length ? input[i++] : Number.NaN; // Not sure if the index 
+        chr3 = i < input.length ? input[i++] : Number.NaN; // checks are needed here
+
+        enc1 = chr1 >> 2;
+        enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
+        enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
+        enc4 = chr3 & 63;
+
+        if (isNaN(chr2)) {
+            enc3 = enc4 = 64;
+        } else if (isNaN(chr3)) {
+            enc4 = 64;
+        }
+        output += keyStr.charAt(enc1) + keyStr.charAt(enc2) +
+                  keyStr.charAt(enc3) + keyStr.charAt(enc4);
+    }
+    return output;
+}
+    </script>
+  </body>
+</html>

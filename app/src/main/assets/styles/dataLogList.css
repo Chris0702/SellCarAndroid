@@ -1,0 +1,192 @@
+#navigationBar{
+	position: relative;
+	height: 55px;
+	max-height: 55px; 
+	background-color: rgb(11,113,191);
+}
+#contentArea{
+	position: relative;
+	height: calc(100% - 55px);
+	background-color: rgb(255,255,255);
+}
+
+#leftTopBtn{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 55px;
+	height: 55px;
+}
+
+#backHome{
+	border: 0;
+	background: transparent;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height:100%;
+	text-overflow: clip;
+	overflow: hidden;
+	background-image: url(../image/home.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: auto 60%;
+}
+
+#bannerTxt{
+	position: absolute;
+	top: 0px;
+	left: 55px;
+	text-align: center;
+	color: rgb(255,255,255);
+	line-height: 55px;
+	font-size: 24px;
+}
+
+#rightTopBtn{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 55px;
+	height: 55px;
+}
+
+
+#pageBar{
+	height: 10vh;
+    min-height: 50px;
+    width: 100%;
+    font-size: 1em;
+    line-height: 30px;
+    margin: 0 auto;
+    background-color:rgb(224,224,224);
+}
+
+#pageBar .displayTable{
+	top: 10px;
+    position: relative;
+    width: 100%;
+}
+
+
+.pbRight{
+	width: 50%;
+	text-align: right;
+	white-space: nowrap;
+}
+.pbLeft{
+	width: 50%;
+	text-align: left;	
+}
+.pbRight > span{
+	background-color: #3949AB;
+	display: inline-block;
+    border-radius: 5vh;
+    border: 2px solid #3949AB;
+}
+
+#logList{
+	margin: 0 auto;
+	height: calc(100% - 10vh);
+	max-height:  calc(100% - 50px);
+	width: 100%;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+#nodeList{
+	height: 5vh;
+    vertical-align: middle;
+    width: 40vw;
+    border: 2px solid rgb(11,113,191);
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+#dataLogList{
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+}
+
+#dataLogList > li{
+	position: relative;
+	height:10vh;
+	/*border-radius: 5px;*/
+	font-size: 3vh;
+	border-bottom: 1px solid #999999;
+}
+
+.itemSelect{
+	display: none;
+	width: 10vh;
+	height: 10vh;
+	line-height: 10vh;
+	font-size: 5vh;
+	text-align: center;
+	
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: auto 60%;
+}
+
+.itemText{
+	margin-left: 3vh;
+	height: 10vh;
+	line-height: 10vh;
+	font-size: 1em;
+	vertical-align: top;
+}
+
+.itemNext{
+	float: right;
+	width: 10vh;
+	height: 10vh;
+  	line-height: 10vh;
+  	font-size: 6vh;
+  	border: 0;
+    padding: 0;
+    background-color: transparent;
+
+    background-image: url(../image/expand_right.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: auto 60%;
+}
+
+
+@media (min-height: 550px) {
+	#pageBar{
+		height: 55px;
+	}
+	#nodeList{
+		height: 30px;
+		font-size: 16px;
+	}
+
+	#dataLogList > li{
+		height:55px;
+		font-size: 24px;
+	}
+	.itemSelect{
+		width: 55px;
+		height: 55px;
+		line-height: 55px;
+		font-size: 27px;
+	}
+
+	.itemText{
+		margin-left: 16px;
+		height: 55px;
+		line-height: 55px;
+		font-size: 24px;
+	}
+
+	.itemNext{
+		width: 55px;
+		height: 55px;
+		line-height: 55px;
+		font-size: 33px;
+	}
+}

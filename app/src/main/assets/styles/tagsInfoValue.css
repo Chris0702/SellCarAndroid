@@ -1,0 +1,407 @@
+body{
+	overflow:hidden;
+}
+#navigationBar{
+	position: relative;
+	height: 55px;
+	max-height: 55px; 
+	background-color: rgb(11,113,191);
+}
+#contentAlarmArea{
+	position: relative;
+	height: 10vh;
+	background-color: rgb(255,255,255);
+}
+#contentTagChart{
+	position: relative;
+	height: 30vh;
+	background-color: rgb(255,255,255);
+}
+#contentTagName{
+	position: relative;
+    height: 10vh;
+    background-color: rgb(255,255,255);
+    line-height: 10vh;
+    font-size: 1.2em;
+    color: rgb(121,186,40);
+    text-indent: 10px;
+}
+#contentArea{
+	position: relative;
+	height: calc(100% - 55px - 50vh);
+	background-color: rgb(224,224,224);
+	overflow:hidden;
+}
+
+#leftTopBtn{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 55px;
+	height: 55px;
+}
+
+#backHome{
+	border: 0;
+	background: transparent;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height:100%;
+	text-overflow: clip;
+	overflow: hidden;
+	background-image: url(../image/back.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: auto 60%;
+}
+
+#bannerTxt{
+	position: absolute;
+	top: 0px;
+	left: 55px;
+	text-align: center;
+	color: rgb(255,255,255);
+	line-height: 55px;
+	font-size: 24px;
+}
+
+#rightTopBtn{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 55px;
+	height: 55px;
+}
+
+#infoListArea{
+	position: relative;
+	width: 100%;
+	/*padding-top: 3vh;*/
+	height: calc(100% - 13vh);
+	overflow: auto;
+}
+
+#btnArea{
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	height: 10vh;
+	line-height: 10vh;
+	text-align: right;
+	background-color: rgb(108,170,217);
+}
+
+#contentAlarmArea span{
+	display: inline-block;
+}
+#pointTypeText{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 10vh;
+	line-height: 10vh;
+	text-indent: 12px;
+	font-size: 1em;
+    color: rgb(11,113,191);
+}
+#pointAlarmText{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 10vh;
+	height: 10vh;
+	background-image: url(../image/alarm-grey.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: auto 50%;
+}
+
+.infoTable{
+	margin: 0 auto;
+	width: 95%;
+	display:table;
+	margin-top: 10px;
+}
+
+.infoTable_tr{
+	height: 50px;
+	line-height: 50px;
+	display:table-row;
+}
+
+.infoTable_td{
+	display:table-cell;
+	color: rgb(11,113,191);
+	border-bottom: 1px solid rgb(11,113,191);
+}
+.infoTable_td:nth-child(1){
+	min-width: 30vw;
+	text-align: left;
+	padding-right: 3vw;
+}
+.infoValue input{
+	background-color:transparent;
+	color: rgb(0,0,0);
+	border-radius: 5px;
+}
+
+#ackTagBtn{
+	background-color: #FFFFFF;
+	padding: 0 5px;
+	margin: 0 5px;
+	width: 30vw;
+	height:5vh;
+	line-height: 5vh;
+	text-overflow: clip;
+	overflow: hidden;
+	color: rgb(11,113,191);
+	border-radius: 5vh;
+	border: 2px solid rgb(11,113,191);
+}
+
+#setBtn{
+	background-color: #FFFFFF;
+	padding: 0 5px;
+	margin: 0 10px;
+	width: 30vw;
+	height:5vh;
+	line-height: 5vh;
+	text-overflow: clip;
+	overflow: hidden;
+	color: rgb(11,113,191);
+	border-radius: 5vh;
+	border: 2px solid rgb(11,113,191);
+}
+
+#ackTagBtn:active,#setBtn:active{
+	background-color: rgb(11,113,191);
+	border-color: rgb(11,113,191);
+	color:#FFFFFF;
+}
+
+
+#blockWindow{
+	position: absolute;
+	top: 0;
+	left:0;
+	width: 100%;
+	height: 100%;
+	display: none;
+	background-color:rgba(0,0,0,0.8);
+}
+#defaultDialog{
+	background-color:#FFFFFF;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left:-150px;
+	margin-top :-150px;
+	width: 300px;
+	height: 300px;
+	overflow: auto;
+	-webkit-box-shadow: 0px 2px 21px 5px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 2px 21px 5px rgba(0,0,0,0.75);
+	box-shadow: 0px 2px 21px 5px rgba(0,0,0,0.75);
+	border-radius: 10px;
+	display: none;
+
+}
+#dialogTitleArea{
+	position: relative;
+	width: 100%;
+	height: 50px;
+	background-color:rgb(234,234,234);
+	color: rgb(11,113,191);
+	font-size: 24px;
+	line-height: 50px;
+	text-indent : 1em ;
+	border-radius: 10px;
+}
+#dialogclose{
+	position: absolute;
+    right: 0;
+    top: 0;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    width: 50px;
+    height: 50px;
+    text-overflow: clip;
+    overflow: hidden;
+    background-image: url(../image/cancel.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto 80%;
+    display: inline-block;
+}
+
+#dialogContent{
+	position: relative;
+	width: 100%;
+	height: calc(100% - 100px);
+	overflow-x: hidden;;
+	overflow-y: auto;
+}
+
+#dialogBtnArea{
+	position: relative;
+	width: 100%;
+	height: 50px;
+	/*background-color:rgb(57,73,171);*/
+	color: #FFFFFF;
+	font-size: 24px;
+	line-height: 50px;
+	text-indent : 1em ;
+}
+#analogArea0{
+	position: absolute;
+	top: 30px;
+    width: 100%;
+    font-size: 1em;
+    text-indent: 15px;
+    color: #585858;
+}
+#analogArea{
+	position: absolute;
+	top: 60px;
+	width: 100%;
+	text-align: center;
+}
+
+#analogValue,#textValue{
+	background-color:rgb(224,224,224);
+	width: 90%;
+	border-radius: 5px;
+}
+
+#textArea0{
+	position: absolute;
+	top: 30px;
+    width: 100%;
+    font-size: 1em;
+    text-indent: 15px;
+    color: #585858;
+}
+
+#textArea{
+	position: absolute;
+	top: 60px;
+	width: 100%;
+	text-align: center;
+}
+
+#digitalValueTable{
+		width: 100%;
+		text-align: center;
+		margin-top: 8px;
+	}
+#digitalValueTable .displayTd{
+	width: 150px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: clip;
+}
+#digitalValueTable .dgTextBtn{
+	display: inline-block;
+	height: 40px;
+	line-height: 40px;
+	background-color:#DCDCDC;
+	width: 140px;
+    border-radius: 5px;
+    margin: 3;
+    overflow: hidden;
+}
+#digitalValueTable input{
+	display: none;
+}
+#digitalValueTable input:checked + .dgTextBtn{
+	background-color:rgb(11,113,191);
+	color: #FFFFFF;
+}
+
+#dialogApply, #dialogCancel{
+	border: 2px solid rgb(11,113,191);
+	background-color: #FFFFFF;
+	width: 40%;
+	height:30px;
+	text-overflow: clip;
+	overflow: hidden;
+	color: rgb(11,113,191);
+	border-radius: 15px;
+	vertical-align: text-top;
+}
+
+#dialogApply{
+	margin-right: 3px;
+}
+
+#dialogCancel{
+	margin-left: 3px;
+}
+
+#dialogApply:active, #dialogCancel:active{
+	background-color: rgb(11,113,191);
+	color: #FFFFFF;
+}
+
+
+@media (min-height: 550px) {
+	#contentAlarmArea{
+		height: 55px;
+	}
+	#contentTagChart{
+		height: 165px;
+	}
+	#contentTagName{
+    	height: 55px;
+    	line-height: 55px;
+    	font-size: 19px;
+	}
+	#contentArea{
+		height: calc(100% - 55px - 275px);
+	}
+
+	#pointTypeText{
+		height: 55px;
+		line-height: 55px;
+		font-size: 16px;
+	}
+	#pointAlarmText{
+		width: 55px;
+		height: 55px;
+	}
+
+	#infoListArea{
+		height: calc(100% - 71px);
+		overflow: auto;
+	}
+
+	#btnArea{
+		height: 55px;
+		line-height: 55px;
+	}
+
+	.infoTable_td{
+		font-size: 16px;
+	}
+
+	input{
+		min-height: 27px;
+    	font-size: 16px;
+	}
+
+	#ackTagBtn{
+		height:27px;
+		line-height: 27px;
+		border-radius: 27px;
+	}
+
+	#setBtn{
+		height:27px;
+		line-height: 27px;
+		border-radius: 27px;
+	}
+
+}

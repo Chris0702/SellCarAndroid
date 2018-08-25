@@ -1,0 +1,44 @@
+body {
+    margin: 0 auto;
+    padding: 0px;
+    /*background-color: red;*/
+   /* height: 100%;
+    width: 100%;*/
+}
+
+#title {
+	text-align: center;
+   	position: relative;
+    margin: 0 auto;
+    padding: 0px;
+    font-size: 5vh;
+    width: 70%;
+    height: 10%;
+    /*background-color: yellow;*/
+}
+
+
+#top {
+	position: relative;
+    margin: 0 auto;
+    padding: 0px;
+    font-size: 1.8vh;
+    width: 70%;
+    height: 35%;
+    /*background-color: green;*/
+}
+
+#bottom {
+    margin: 0 auto;
+    padding: 0px;
+    position: relative;
+    width: 100%;
+    height: 55%;
+    /*background-color: blue;*/
+}
+
+#example_img {
+    margin: 0 auto;
+    height: 100%;
+    /*background-color: green;*/
+}
