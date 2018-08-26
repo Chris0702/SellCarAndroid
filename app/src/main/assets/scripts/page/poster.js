@@ -1,9 +1,9 @@
 function responseFunc(functionType, result){
 	//var resultObj = JSON.parse(result);
 	// var resultObj = result;
-	// if(functionType == 'insertProjectList'){
-	// 	loginAction.insertProjectList(resultObj);
-	// }
+	if(functionType == 'setImageAll'){
+		poster.setImageAll(result);
+	}
 	// else if(functionType == 'insertAccountHistoryList'){
 	// 	loginAction.insertAccountHistoryList(resultObj);
 	// }
@@ -19,10 +19,10 @@ function responseFunc(functionType, result){
 	// 		dashboardMui.muiFunctions.run();
 	// 	}
 	// }
-	// else if(functionType == 'error'){
-	// 	console.log('----------------------error');
-	// 	console.log(resultObj);
-	// }
+	else if(functionType == 'error'){
+		console.log('----------------------error');
+		console.log(result);
+	}
 	// else{}
 };
 
@@ -63,6 +63,7 @@ function responseFunc(functionType, result){
 			console.log("reference  click")
 			callNativeInterface.changePage("referencePage","");
 		});
+		callNativeInterface.getCarImagePathByFolder('poster');
 	};
 
 	poster.changePage = function(pageName){
@@ -81,6 +82,15 @@ function responseFunc(functionType, result){
 		// 	$('#top').css('background-position', 'center 100%');
 		// 	$('#gradBackgroud').css('bottom', '20%');
 		// }
+	};
+
+	poster.setImageAll = function(resultObj){
+		var imgArr = resultObj.imgArr;
+        var serverUrl = resultObj.serverUrl
+        console.log("======setImageAll======imgArr===========")
+        console.log(imgArr)
+        console.log("======setImageAll======serverUrl===========")
+        console.log(serverUrl)
 	};
 
     global.poster = poster;

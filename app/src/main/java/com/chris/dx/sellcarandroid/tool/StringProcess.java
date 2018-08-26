@@ -19,6 +19,11 @@ import java.util.Calendar;
  */
 
 public class StringProcess {
+    public static String getCompanyLocalImageFolderPath(String company,String folderName) {
+        String result = Constants.COMPANY_PRE_FOLDER_PATH + "/"+company+"/image/"+folderName;
+        return result;
+    }
+
     public static String getChangePageURL(String controllerType) {
         String result = "{" + Constants.DOUBLE_QUOTES + "url" + Constants.DOUBLE_QUOTES + ":" + controllerType + "}";
         return result;

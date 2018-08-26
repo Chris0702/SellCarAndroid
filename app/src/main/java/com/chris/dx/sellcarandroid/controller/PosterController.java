@@ -6,6 +6,7 @@ import android.webkit.WebView;
 
 import com.chris.dx.sellcarandroid.define.Constants;
 import com.chris.dx.sellcarandroid.tool.JavaScriptInterface;
+import com.chris.dx.sellcarandroid.tool.StringProcess;
 
 public class PosterController extends Controller {
     public PosterController(Activity activity, WebView webView, JavaScriptInterface javaScriptInterface, String pageName) {
@@ -25,12 +26,11 @@ public class PosterController extends Controller {
     public void executeCmd(String cmd, Object[] arg) {
         Log.d("debug", "home  exe");
         switch (cmd) {
-            case Constants.GET_FUNCTION_LIST_COMMAND:
+            case Constants.GET_CAR_IMAGE_PATH_BY_FOLDER_COMMAND:
 //                controlModel.logServerDB();
 //                getFunctionList();
-                break;
-            case Constants.GET_LANGUAGE_COMMAND:
-//                insertLanguage();
+                controlModel.toastString(arg[0].toString());
+                getCarImagePathByFolder(arg[0].toString());
                 break;
             default:
         }
@@ -41,5 +41,23 @@ public class PosterController extends Controller {
         mainWebView.getSettings().setDomStorageEnabled(true);
         mainWebView.loadUrl(Constants.POSTER_WEB_URL);
         mainWebView.addJavascriptInterface(controlJavaScriptInterface, Constants.ANDROID_PARAMETER_FOR_JAVASCRIPT);
+    }
+
+    public void getLocalPathAllResponse(final String receiveMessage){
+//        controlModel.toastString(receiveMessage);
+        controlActivity.runOnUiThread(new Runnable() {
+            //  @Override
+            public void run() {
+                String setImageAllUrl = StringProcess.getJavascriptFunctionStringByArrayStringAndString(Constants.IMAGE_ARRAY, receiveMessage, Constants.SERVER_URL_STRING, Constants.SERVER_URL, Constants.SET_IMAGE_ALL_JAVASCRIPT);
+                Log.d("debug", "getLocalPathAllResponse ok       " + setImageAllUrl);
+                mainWebView.loadUrl(setImageAllUrl);
+                Log.d("debug", "getLocalPathAllResponse ok");
+            }
+        });
+    }
+
+    private void getCarImagePathByFolder(final String folderName){
+        String reqFolderName = StringProcess.getCompanyLocalImageFolderPath(carCompany,folderName);
+        controlHttpClient.getLocalPathAll(reqFolderName,this);
     }
 }

@@ -41,6 +41,7 @@ public class Constants {
     public static final String ANDROID_PARAMETER_FOR_JAVASCRIPT = "appJsInterface";
     public static final String JAVASCRIPT_PARAMETER_FOR_ANDROID = "jsAppInterface";
 
+    public static final String SET_IMAGE_ALL_JAVASCRIPT = "setImageAll";
     public static final String SET_MERGE_IMAGE_ALL_JAVASCRIPT = "setMergeImageAll";
     public static final String SET_MERGE_IMAGE_RESULT_JAVASCRIPT = "setMergeImageResult";
 
@@ -90,90 +91,9 @@ public class Constants {
     public static final String MERGE_IMAGE_FOLDER = "mergeImage";
 
 
-    //sqlite
-    public static final String DATABASE_NAME = "webaccessDB";
-    public static final int DATABASE_VERSION = 1;
-    public static final String ID_SQL = "id";
-    //table user
-    public static final String TABLE_USER_SQL = "User";
-    public static final String USER_ID_SQL = "UserId";
-    public static final String USER_USERNAME_SQL = "username";
-    public static final String USER_PASSWORD_SQL = "password";
-    public static final String USER_PROJECT_NAME_SQL = "projectName";
-    public static final String USER_SERVER_TOKEN_SQL = "serverToken";
-    public static final String USER_SERVER_IP_SQL = "ip";
-    public static final String USER_TABLE_CREATE_SQL = "CREATE TABLE "
-            + TABLE_USER_SQL + " ( "
-            + USER_USERNAME_SQL + " text not null ," + USER_PASSWORD_SQL + " text not null ,"
-            + USER_PROJECT_NAME_SQL + " text not null ,"+ USER_SERVER_TOKEN_SQL + " text not null ,"
-            + USER_SERVER_IP_SQL + " text not null ,"
-            + "CONSTRAINT "+USER_ID_SQL+" PRIMARY KEY ("+USER_USERNAME_SQL+","+USER_PROJECT_NAME_SQL+","+USER_SERVER_IP_SQL+")); ";
+    //folderPath
+    public static final String COMPANY_PRE_FOLDER_PATH = "resource/company";
 
-    //table system info
-    public static final String TABLE_SYSTEM_INFO_SQL = "SystemInfo";
-    public static final String SYSTEM_INFO_FIREBASE_TOKEN_SQL = "firebaseToken";
-    public static final String SYSTEM_INFO_LAST_IP_SQL = "lastIP";
-    public static final String SYSTEM_INFO_LAST_USERNAME_SQL = "lastUsername";
-    public static final String SYSTEM_INFO_LAST_PASSWORD_SQL = "lastPassword";
-    public static final String SYSTEM_INFO_LAST_PROJECT_NAME_SQL = "lastProjectName";
-    public static final String SYSTEM_INFO_IS_LOGIN_SQL = "isLogin";
-    public static final String SYSTEM_INFO_ACTION_LOG_PAGE_NAME_SQL = "actionLogPage";
-    public static final String SYSTEM_INFO_ALARM_LOG_PAGE_NAME_SQL = "alarmLogPage";
-    public static final String SYSTEM_INFO_ALARM_SUMMARY_LOG_PAGE_NAME_SQL = "alarmSummaryPage";
-    public static final String SYSTEM_INFO_TREND_PAGE_NAME_SQL = "trendPage";
-    public static final String SYSTEM_INFO_DASHBOARD_PAGE_NAME_SQL = "dashboardPage";
-    public static final String SYSTEM_INFO_TAGS_INFO_PAGE_NAME_SQL = "tagsInfoPage";
-    public static final String SYSTEM_INFO_G_MAP_PAGE_NAME_SQL = "gMapPage";
-    public static final String SYSTEM_INFO_LAST_SERVER_TOKEN_SQL = "lastServerToken";
-    public static final String SYSTEM_INFO_LANGUAGE_SQL = "language";
-    public static final String SYSTEM_INFO_BAIDO_NOTIFICATION_CHANNEL_ID = "baiduNotificationChannelId";
-    public static final String SYSTEM_INFO_DEVICE_ID = "deviceID";
-    public static final String SYSTEM_INFO_NODE_PAGE_NAME_SQL = "nodePage";
-
-    public static final String SYSTEM_INFO_TABLE_CREATE_SQL = "CREATE TABLE "
-            + TABLE_SYSTEM_INFO_SQL + " ( " + ID_SQL + "  INTEGER primary key autoincrement, "
-            + SYSTEM_INFO_FIREBASE_TOKEN_SQL + " text not null,"
-            + SYSTEM_INFO_IS_LOGIN_SQL + " text not null,"
-            + SYSTEM_INFO_LAST_IP_SQL + " text not null,"
-            + SYSTEM_INFO_LAST_PROJECT_NAME_SQL + " text not null,"
-            + SYSTEM_INFO_LAST_USERNAME_SQL + " text not null,"
-            + SYSTEM_INFO_LAST_PASSWORD_SQL + " text not null,"
-            + SYSTEM_INFO_LAST_SERVER_TOKEN_SQL + " text not null,"
-            + SYSTEM_INFO_ACTION_LOG_PAGE_NAME_SQL + " text not null,"
-            + SYSTEM_INFO_ALARM_LOG_PAGE_NAME_SQL + " text not null,"
-            + SYSTEM_INFO_ALARM_SUMMARY_LOG_PAGE_NAME_SQL + " text not null,"
-            + SYSTEM_INFO_TREND_PAGE_NAME_SQL + " text not null,"
-            + SYSTEM_INFO_DASHBOARD_PAGE_NAME_SQL + " text not null,"
-            + SYSTEM_INFO_TAGS_INFO_PAGE_NAME_SQL + " text not null,"
-            + SYSTEM_INFO_G_MAP_PAGE_NAME_SQL + " text not null,"
-            + SYSTEM_INFO_LANGUAGE_SQL + " text not null,"
-            + SYSTEM_INFO_BAIDO_NOTIFICATION_CHANNEL_ID + " text not null,"
-            + SYSTEM_INFO_DEVICE_ID + " text not null,"
-            + SYSTEM_INFO_NODE_PAGE_NAME_SQL + " text not null"
-            +"); ";
-
-    //table server
-    public static final String TABLE_SERVER_SQL = "Server";
-    public static final String SERVER_IP_SQL = "ip";
-    public static final String SERVER_FIREBASE_TOKEN_ENABLE_SQL = "firebaseTokenEnable";
-    public static final String SERVER_UUID_SQL = "UUID";
-    public static final String SERVER_TABLE_CREATE_SQL = "CREATE TABLE "
-            + TABLE_SERVER_SQL + " ( "
-            + SERVER_IP_SQL + " text not null ,"
-            + SERVER_FIREBASE_TOKEN_ENABLE_SQL + " text not null ,"
-            + SERVER_UUID_SQL + " text not null ,"
-            +" PRIMARY KEY ("+SERVER_IP_SQL+")); ";
-
-    //table project
-    public static final String TABLE_PROJECT_SQL = "Project";
-    public static final String PROJECT_ID_SQL = "ProjectId";
-    public static final String PROJECT_IP_SQL = "ip";
-    public static final String PROJECT_NAME_SQL = "projectName";
-    public static final String PROJECT_TABLE_CREATE_SQL = "CREATE TABLE "
-            + TABLE_PROJECT_SQL + " ( "
-            + PROJECT_IP_SQL + " text not null ,"
-            + PROJECT_NAME_SQL + " text not null ,"
-            + "CONSTRAINT "+PROJECT_ID_SQL+" PRIMARY KEY ("+PROJECT_IP_SQL+","+PROJECT_NAME_SQL+")); ";
 
     //util
     public static final int PHOTO = 99;
@@ -228,7 +148,11 @@ public class Constants {
     public static final String IMAGE_BYTE="imageByte";
     public static final String TARGET_IMAGE="targetImg";
     public static final String RESULT="result";
+    public static final String FOLDER_NAME="folderName";
+    public static final String COMPANY_TYPE="companyType";
+
     public static final char BACKSLASH_CHAR='\\';
+
 
     public static final String NODE_NAME="nodeName";
     public static final String TAGS_LIST="tagsList";
@@ -292,6 +216,8 @@ public class Constants {
 
 
     //controller command
+    public static final String GET_CAR_IMAGE_PATH_BY_FOLDER_COMMAND = "getCarImagePathByFolder";
+
     public static final String GET_MERGE_IMAGE_ALL_SRC_COMMAND = "getMergeImageAllSrc";
     public static final String MERGE_IMAGE_EXE_COMMAND = "mergeImageExe";
     public static final String SELECT_IMAGE_FILE_COMMAND = "selectImageFile";

@@ -124,29 +124,29 @@ public class HttpClient {
         });
     }
 
-//    public void getLocalPathAll(final String folderName,final Controller controller) {
-//        Log.d("debug", "http  rest api getLocalPathAll  ");
-//        String requestUrl = StringProcess.getLocalPathAllApiUrl(folderName);
-//        Log.d("debug", requestUrl);
-//        Request request = new Request.Builder()
-//                .url(requestUrl)
-//                .build();
-//        Call call = okHttpClient.newCall(request);
-//        call.enqueue(new Callback() {
-//            @Override
-//            public void onFailure(Call call, IOException e) {
-////                controller.checkServerIsExistResponse(false,Constants.EMPTY_STRING);
-//                controller.getLocalPathAllResponse(Constants.EMPTY_STRING);
-//            }
-//
-//            @Override
-//            public void onResponse(Call call, Response response) throws IOException {
-//                String receiveMessage = response.body().string();
-//                Log.d("http", receiveMessage);
-//                controller.getLocalPathAllResponse(receiveMessage);
-//            }
-//        });
-//    }
+    public void getLocalPathAll(final String folderName,final Controller controller) {
+        Log.d("debug", "http  rest api getLocalPathAll  ");
+        String requestUrl = StringProcess.getLocalPathAllApiUrl(folderName);
+        Log.d("debug", requestUrl);
+        Request request = new Request.Builder()
+                .url(requestUrl)
+                .build();
+        Call call = okHttpClient.newCall(request);
+        call.enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+//                controller.checkServerIsExistResponse(false,Constants.EMPTY_STRING);
+                controller.getLocalPathAllResponse(Constants.EMPTY_STRING);
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                String receiveMessage = response.body().string();
+                Log.d("http", receiveMessage);
+                controller.getLocalPathAllResponse(receiveMessage);
+            }
+        });
+    }
 //
 //    public void mergeImage(final String mergeImageArr, final String targetImage, final MergeImageController mergeImageController) {
 //        RequestBody requestBody = new FormBody.Builder()

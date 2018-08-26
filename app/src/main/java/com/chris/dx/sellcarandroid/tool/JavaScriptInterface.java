@@ -170,9 +170,16 @@ public class JavaScriptInterface {
     }
 
     @JavascriptInterface
-    public void getMergeImageAllSrc() {
-        Log.d(TAG, "   getMergeImageAllSrc    ");
-        controller.executeCmd(Constants.GET_MERGE_IMAGE_ALL_SRC_COMMAND, null);
+    public void getCarImagePathByFolder(final String JSONString) {
+        Log.d(TAG, "   getCarImagePathByFolder    ");
+        Object[] arg = new Object[1];
+        JSONObject jsonObject = controlModel.getJsonObject(JSONString);
+        if (jsonObject != null) {
+            arg[0] = controlModel.getJSONProtString(Constants.FOLDER_NAME, jsonObject);
+            Log.d(TAG, "   FOLDER_NAME  0  " + arg[0].toString());
+            controller.executeCmd(Constants.GET_CAR_IMAGE_PATH_BY_FOLDER_COMMAND, arg);
+        }
+//        controller.executeCmd(Constants.GET_MERGE_IMAGE_ALL_SRC_COMMAND, null);
     }
 
     @JavascriptInterface
@@ -200,9 +207,11 @@ public class JavaScriptInterface {
         Log.d(TAG, "changePage   " + JSONString);
         JSONObject jsonObject = controlModel.getJsonObject(JSONString);
         if (jsonObject != null) {
-            Object[] arg = new Object[3];
+            Object[] arg = new Object[2];
             arg[0] = controlModel.getJSONProtString(Constants.URL, jsonObject);
+            arg[1] = controlModel.getJSONProtString(Constants.COMPANY_TYPE, jsonObject);
             setController(arg[0].toString());
+            controller.setCarCompany(arg[1].toString());
             controller.executeCtrl();
         }
     }
