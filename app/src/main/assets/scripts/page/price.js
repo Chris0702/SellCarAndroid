@@ -29,14 +29,14 @@ function responseFunc(functionType, result){
 
 
 (function (global) {
-    if (global.home) {
+    if (global.price) {
         return;
     }
-    var home = new Object();
-    home.currentDrawMode = 0;
+    var price = new Object();
+
 	
-	home.init = function(){
-		console.log("=========home============init")
+	price.init = function(){
+		console.log("=========poster============init")
 		$('#projArea,#userArea,#pwdArea,#rememberMeArea,#loginArea').hide();
 		$('#top').css('height','50%');
 		$('#bottom').css('height','calc(50% - 5vh)');
@@ -44,19 +44,19 @@ function responseFunc(functionType, result){
 		$('#bottom').css('margin-right','20%');
 		
 
-		$('#nissan').on('click',function(){
-			console.log("nissan  click")
-			callNativeInterface.changePage("posterPage","NISSAN");
+		$('#company').on('click',function(){
+			console.log("company  click")
+			callNativeInterface.changePage("homePage","");
 		});
 
-		$('#toyota').on('click',function(){
-			console.log("toyota  click")
-			callNativeInterface.changePage("posterPage","TOYOTA");
+		$('#poster').on('click',function(){
+			console.log("poster  click")
+			callNativeInterface.changePage("posterPage","");
 		});
 
-		$('#honda').on('click',function(){
-			console.log("honda  click")
-			callNativeInterface.changePage("posterPage","HONDA");
+		$('#price').on('click',function(){
+			console.log("price  click")
+			// callNativeInterface.changePage("pricePage","");
 		});
 
 		$('#reference').on('click',function(){
@@ -65,11 +65,11 @@ function responseFunc(functionType, result){
 		});
 	};
 
-	home.changePage = function(pageName){
+	price.changePage = function(pageName){
 		callNativeInterface.changePage(pageName);
 	};
 
-	home.drawBackground = function(){
+	price.drawBackground = function(){
 		// if(loginAction.currentDrawMode == 0){
 		// 	$('#grad2').hide();
 		// 	$('#grad1').show();
@@ -83,5 +83,5 @@ function responseFunc(functionType, result){
 		// }
 	};
 
-    global.home = home;
+    global.price = price;
 })(this);

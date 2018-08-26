@@ -33,11 +33,10 @@ public class Constants {
 
     //web url
     public static final String HOME_WEB_URL = "file:///android_asset/views/home.html";
-    public static final String INTRODUCTION_WEB_URL = "file:///android_asset/views/introduction.html";
-    public static final String UPLOAD_WEB_URL = "file:///android_asset/views/uploadMergeImage.html";
-    public static final String ABOUT_WEB_URL = "file:///android_asset/views/about.html";
-    public static final String MERGE_IMAGE_WEB_URL = "file:///android_asset/views/mergeImage.html";
-
+    public static final String POSTER_WEB_URL = "file:///android_asset/views/poster.html";
+    public static final String PRICE_WEB_URL = "file:///android_asset/views/price.html";
+    public static final String TEST_DRIVE_WEB_URL = "file:///android_asset/views/testDrive.html";
+    public static final String REFERENCE_WEB_URL = "file:///android_asset/views/reference.html";
     //javascript
     public static final String ANDROID_PARAMETER_FOR_JAVASCRIPT = "appJsInterface";
     public static final String JAVASCRIPT_PARAMETER_FOR_ANDROID = "jsAppInterface";
@@ -272,8 +271,20 @@ public class Constants {
     public static final int SCROLL_DELAY_TIME=250;
 
     //page
-    public static final String CONTROL_PAGE_NAME = "Controller";
+    public static final String CONTROL_PAGE_NAME = "controller";
+
     public static final String HOME_PAGE_NAME = "homePage";
+    public static final String POSTER_PAGE_NAME = "posterPage";
+    public static final String PRICE_PAGE_NAME = "pricePage";
+    public static final String TEST_DRIVE_PAGE_NAME = "testDrivePage";
+    public static final String REFERENCE_PAGE_NAME = "referencePage";
+
+    public static final String NISSAN_COMPANY = "NISSAN";
+    public static final String TOYOTA_COMPANY = "TOYOTA";
+    public static final String HONDA_COMPANY = "HONDA";
+
+
+
     public static final String INTRODUCTION_PAGE_NAME = "introduction";
     public static final String MERGE_IMAGE_PAGE_NAME = "mergeImage";
     public static final String UPLOAD_PAGE_NAME = "upload";

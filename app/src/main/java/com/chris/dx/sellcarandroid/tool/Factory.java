@@ -8,6 +8,10 @@ import android.widget.ScrollView;
 
 
 import com.chris.dx.sellcarandroid.controller.HomeController;
+import com.chris.dx.sellcarandroid.controller.PosterController;
+import com.chris.dx.sellcarandroid.controller.PriceController;
+import com.chris.dx.sellcarandroid.controller.ReferenceController;
+import com.chris.dx.sellcarandroid.controller.TestDriveController;
 import com.chris.dx.sellcarandroid.fragment.MainWebViewFragment;
 
 //import com.webaccess.advantech.webaccessmobile.background.SystemData;
@@ -63,6 +67,22 @@ public class Factory {
 //
     public HomeController createHomeController(Activity activity, WebView webView, JavaScriptInterface javaScriptInterface, String pageName) {
         return new HomeController(activity, webView, javaScriptInterface,pageName);
+    }
+
+    public PosterController createPosterController(Activity activity, WebView webView, JavaScriptInterface javaScriptInterface, String pageName) {
+        return new PosterController(activity, webView, javaScriptInterface,pageName);
+    }
+
+    public PriceController createPriceController(Activity activity, WebView webView, JavaScriptInterface javaScriptInterface, String pageName) {
+        return new PriceController(activity, webView, javaScriptInterface,pageName);
+    }
+
+    public ReferenceController createReferenceController(Activity activity, WebView webView, JavaScriptInterface javaScriptInterface, String pageName) {
+        return new ReferenceController(activity, webView, javaScriptInterface,pageName);
+    }
+
+    public TestDriveController createTestDriveController(Activity activity, WebView webView, JavaScriptInterface javaScriptInterface, String pageName) {
+        return new TestDriveController(activity, webView, javaScriptInterface,pageName);
     }
 //
 //    public IntroductionController createIntroductionController(Activity activity, WebView webView, JavaScriptInterface javaScriptInterface, String pageName) {

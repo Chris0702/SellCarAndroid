@@ -31,7 +31,7 @@ public class Controller {
     protected String controlPageName;
     protected Model controlModel;
     protected HttpClient controlHttpClient;
-
+    protected String carCompany;
 
     public Controller() {
         controlPageName = Constants.CONTROL_PAGE_NAME;
@@ -40,6 +40,7 @@ public class Controller {
     //
     public Controller(Activity activity, WebView webView, JavaScriptInterface javaScriptInterface, String pageName) {
         //factory = new Factory();
+        carCompany =Constants.EMPTY_STRING;
         controlPageName = pageName;
         controlActivity = activity;
         mainWebView = webView;
@@ -54,6 +55,10 @@ public class Controller {
             }
         });
         controlHttpClient.checkServerIsExist(this);
+    }
+
+    public void setCarCompany( String company) {
+        carCompany = company;
     }
 
     public void checkServerIsExistResponse(boolean result, final String receiveMessage) {

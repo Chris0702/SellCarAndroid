@@ -28,9 +28,10 @@
     }
   };
 
-  callNativeInterface.changePage = function(url){
+  callNativeInterface.changePage = function(url,companyType){
     var cbObj = {};
     cbObj.url = url;
+    cbObj.companyType = companyType;
     var cbJsonStr = JSON.stringify(cbObj);
     console.log('!!!!!!!!!!!!!changePage!!!!!!!!!!!!!!!!');
     if(typeof(appJsInterface) != 'undefined'){
