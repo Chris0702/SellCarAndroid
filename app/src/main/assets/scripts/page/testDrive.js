@@ -1,3 +1,14 @@
+let name = "克里斯";
+let company = "克里斯公司";
+let phone = "0909636123";
+let address = "台北市文山區";
+let paymentType = "現金";
+let carName ="閃電霹靂車";
+let carCompany = "管生車隊";
+let carVersion = "阿斯拉1234";
+let carColor = "金色";
+let hopeTime = "3000年7月2日";
+
 function responseFunc(functionType, result){
 	//var resultObj = JSON.parse(result);
 	// var resultObj = result;
@@ -62,6 +73,11 @@ function responseFunc(functionType, result){
 		$('#reference').on('click',function(){
 			console.log("reference  click")
 			callNativeInterface.changePage("referencePage","");
+		});
+
+		$('#subscribe').on('click',function(){
+			console.log("subscribe  click")
+			callNativeInterface.orderTestDrive(name, company, phone, address, paymentType, carName, carCompany, carVersion, carColor, hopeTime);
 		});
 	};
 

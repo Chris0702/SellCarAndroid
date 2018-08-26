@@ -170,6 +170,32 @@ public class JavaScriptInterface {
     }
 
     @JavascriptInterface
+    public void orderTestDrive(final String JSONString) {
+        Log.d(TAG, "   orderTestDrive    ");
+//        controlModel.toastString("js  orderTestDrive");
+        Object[] arg = new Object[10];
+        JSONObject jsonObject = controlModel.getJsonObject(JSONString);
+        if (jsonObject != null) {
+            arg[0] = controlModel.getJSONProtString(Constants.NAME, jsonObject);
+            arg[1] = controlModel.getJSONProtString(Constants.COMPANY, jsonObject);
+            arg[2] = controlModel.getJSONProtString(Constants.PHONE, jsonObject);
+            arg[3] = controlModel.getJSONProtString(Constants.ADDRESS, jsonObject);
+            arg[4] = controlModel.getJSONProtString(Constants.PAYMENT_TYPE, jsonObject);
+            arg[5] = controlModel.getJSONProtString(Constants.CAR_NAME, jsonObject);
+            arg[6] = controlModel.getJSONProtString(Constants.CAR_COMPANY, jsonObject);
+            arg[7] = controlModel.getJSONProtString(Constants.CAR_VERSION, jsonObject);
+            arg[8] = controlModel.getJSONProtString(Constants.CAR_COLOR, jsonObject);
+            arg[9] = controlModel.getJSONProtString(Constants.HOPE_TIME, jsonObject);
+
+
+            Log.d(TAG, "   orderTestDrive  0  " + arg[0].toString());
+
+            controller.executeCmd(Constants.ORDER_TEST_DRIVE_COMMAND, arg);
+        }
+//        controller.executeCmd(Constants.GET_MERGE_IMAGE_ALL_SRC_COMMAND, null);
+    }
+
+    @JavascriptInterface
     public void getCarImagePathByFolder(final String JSONString) {
         Log.d(TAG, "   getCarImagePathByFolder    ");
         Object[] arg = new Object[1];

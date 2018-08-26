@@ -18,6 +18,29 @@
     //appJsInterface
     var callNativeInterface = new Object();
 
+    callNativeInterface.orderTestDrive = function(name, company, phone, address, paymentType, carName, carCompany, carVersion, carColor, hopeTime) {
+        console.log('!!!!!!!!!!!!!orderTestDrive!!!!!!!!!!!!!!!!');
+        var cbObj = {};
+        cbObj.name = name;
+        cbObj.company = company;
+        cbObj.phone = phone;
+        cbObj.address = address;
+        cbObj.payment_type = paymentType;
+        cbObj.car_name = carName;
+        cbObj.car_company = carCompany;
+        cbObj.car_version = carVersion;
+        cbObj.car_color = carColor;
+        cbObj.hopeTime = hopeTime;
+
+        var cbJsonStr = JSON.stringify(cbObj);
+        if (typeof(appJsInterface) != 'undefined') {
+            console.log('!!!!!!!!!!!!!orderTestDrive!!!!!!appJsInterface!!!!!!!!!!');
+            appJsInterface.orderTestDrive(cbJsonStr);
+        } else {
+            callIosNativeApp('changePage', cbJsonStr);
+        }
+    };
+
     callNativeInterface.selectImageFile = function() {
         console.log('!!!!!!!!!!!!!selectImageFile!!!!!!!!!!!!!!!!');
         if (typeof(appJsInterface) != 'undefined') {

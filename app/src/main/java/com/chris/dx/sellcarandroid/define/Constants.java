@@ -148,7 +148,21 @@ public class Constants {
     public static final String IMAGE_BYTE="imageByte";
     public static final String TARGET_IMAGE="targetImg";
     public static final String RESULT="result";
+
+
     public static final String FOLDER_NAME="folderName";
+
+    public static final String NAME="name";
+    public static final String COMPANY="company";
+    public static final String PHONE="phone";
+    public static final String ADDRESS="address";
+    public static final String PAYMENT_TYPE="payment_type";
+    public static final String CAR_NAME="car_name";
+    public static final String CAR_COMPANY="car_company";
+    public static final String CAR_VERSION="car_version";
+    public static final String CAR_COLOR="car_color";
+    public static final String HOPE_TIME="hopeTime";
+
     public static final String COMPANY_TYPE="companyType";
 
     public static final char BACKSLASH_CHAR='\\';
@@ -185,7 +199,7 @@ public class Constants {
     public static final String VERSION ="version";
 
     public static final String G_MAP = "map";
-    public static final String NAME = "name";
+
     public static final String MAP_LIST = "mapList";
     public static final String MAP_TYPE = "mapType";
     public static final String MAP_NAME = "mapName";
@@ -217,6 +231,7 @@ public class Constants {
 
     //controller command
     public static final String GET_CAR_IMAGE_PATH_BY_FOLDER_COMMAND = "getCarImagePathByFolder";
+    public static final String ORDER_TEST_DRIVE_COMMAND = "orderTestDrive";
 
     public static final String GET_MERGE_IMAGE_ALL_SRC_COMMAND = "getMergeImageAllSrc";
     public static final String MERGE_IMAGE_EXE_COMMAND = "mergeImageExe";
@@ -258,11 +273,12 @@ public class Constants {
     public static String EXE_API_TYPE = "exe";
     public static String FILE_API_TYPE = "file";
     public static String USER_API_TYPE = "user";
+    public static String TEST_DRIVE_API_TYPE = "testDrive";
 
     //rest api
     public static String SERVER_IS_EXIST_API = SERVER_URL + "/server/isExist";
     public static String GET_LOCAL_PATH_ALL_API = SERVER_URL + "/file/getLocalPathAll";
-    public static String MERGE_IMAGE_ALL_API = SERVER_URL + "/exe/mergeImage";
+    public static String ORDER_TEST_DRIVE_API = SERVER_URL + "/testDrive/orderTestDrive";
     public static String UPLOAD_IMAGE_API = SERVER_URL + "/file/uploadMergeImageMobile";
 
 

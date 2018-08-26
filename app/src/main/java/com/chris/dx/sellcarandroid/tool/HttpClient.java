@@ -26,6 +26,7 @@ import java.util.List;
 //
 
 import com.chris.dx.sellcarandroid.controller.Controller;
+import com.chris.dx.sellcarandroid.controller.TestDriveController;
 import com.chris.dx.sellcarandroid.define.Constants;
 
 import okhttp3.Call;
@@ -147,33 +148,42 @@ public class HttpClient {
             }
         });
     }
-//
-//    public void mergeImage(final String mergeImageArr, final String targetImage, final MergeImageController mergeImageController) {
-//        RequestBody requestBody = new FormBody.Builder()
-//                .add(Constants.MERGE_IMAGE_ARRAY_S, mergeImageArr)
-//                .add(Constants.TARGET_IMAGE, targetImage)
-//                .build();
-//        Request request = new Request.Builder()
-//                .url(Constants.MERGE_IMAGE_ALL_API)
-//                .post(requestBody)
-////                .addHeader(Constants.COOKIE, StringProcess.getCookieString(serverToken))
-//                .build();
-//        Call call = okHttpClient.newCall(request);
-//        call.enqueue(new Callback() {
-//            @Override
-//            public void onFailure(Call call, IOException e) {
-//                Log.d("http", "http rest api  mergeImage  fail         "+e);
-//            }
-//
-//            @Override
-//            public void onResponse(Call call, Response response) throws IOException {
-//                Log.d("http", "http rest api  mergeImage  success  ");
-//                String receiveMessage = response.body().string();
-//                Log.d("http", "http rest api  mergeImage  success   receiveMessage   " + receiveMessage);
-//                mergeImageController.mergeImageExeResponse(receiveMessage);
-//            }
-//        });
-//    }
+
+    public void orderTestDrive(final String name,final String company,final String phone,final String address,final String paymentType,final String carName,final String carCompany,final String carVersion,final String carColor,final String hopeTime, final TestDriveController testDriveController) {
+        RequestBody requestBody = new FormBody.Builder()
+                .add(Constants.NAME, name)
+                .add(Constants.COMPANY, company)
+                .add(Constants.PHONE, phone)
+                .add(Constants.ADDRESS, address)
+                .add(Constants.PAYMENT_TYPE, paymentType)
+                .add(Constants.CAR_NAME, carName)
+                .add(Constants.CAR_COMPANY, carCompany)
+                .add(Constants.CAR_VERSION, carVersion)
+                .add(Constants.CAR_COLOR, carColor)
+                .add(Constants.HOPE_TIME, hopeTime)
+                .build();
+        Request request = new Request.Builder()
+                .url(Constants.ORDER_TEST_DRIVE_API)
+                .post(requestBody)
+//                .addHeader(Constants.COOKIE, StringProcess.getCookieString(serverToken))
+                .build();
+        Call call = okHttpClient.newCall(request);
+        call.enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                Log.d("http", "http rest api  orderTestDrive  fail         "+e);
+                testDriveController.orderTestDriveResponse(false,Constants.EMPTY_STRING);
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                Log.d("http", "http rest api  orderTestDrive  success  ");
+                String receiveMessage = response.body().string();
+                Log.d("http", "http rest api  orderTestDrive  success   receiveMessage   " + receiveMessage);
+                testDriveController.orderTestDriveResponse(true,receiveMessage);
+            }
+        });
+    }
 //
 //    public void uploadImage(final String imageByte,final UploadController uploadController) {
 //        RequestBody requestBody = new FormBody.Builder()

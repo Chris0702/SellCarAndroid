@@ -63,6 +63,10 @@ function responseFunc(functionType, result){
 			console.log("reference  click")
 			callNativeInterface.changePage("referencePage","");
 		});
+		$('.testDrive').on('click',function(){
+			console.log("reference  click")
+			callNativeInterface.changePage("testDrivePage","");
+		});
 	};
 
 	price.changePage = function(pageName){
