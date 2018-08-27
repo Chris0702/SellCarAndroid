@@ -37,12 +37,11 @@ function responseFunc(functionType, result){
 	
 	home.init = function(){
 		console.log("=========home============init")
-		$('#projArea,#userArea,#pwdArea,#rememberMeArea,#loginArea').hide();
-		$('#top').css('height','50%');
-		$('#bottom').css('height','calc(50% - 5vh)');
-		$('#bottom').css('margin-left','20%');
-		$('#bottom').css('margin-right','20%');
-		
+		// $('#top').css('height','50%');
+		// $('#content').css('height','40%');
+		// $('#content').css('margin-left','20%');
+		// $('#content').css('margin-right','20%');
+		// $('#bottom').css('height','10%');
 
 		$('#nissan').on('click',function(){
 			console.log("nissan  click")

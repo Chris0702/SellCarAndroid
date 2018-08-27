@@ -3,15 +3,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 <title>imageMerge</title>
-<link rel="stylesheet" href="../styles/bootstrap-3.3.7/css/bootstrap.min.css">
+
 <link rel="stylesheet" type="text/css" href="../styles/home.css" />
-<!-- <link rel="stylesheet" type="text/css" href="./styles/commonStyle.css" />
-<link rel="stylesheet" type="text/css" href="./styles/loginAction.css" /> -->
+
+<link rel="stylesheet" href="../styles/bootstrap-3.3.7/css/bootstrap.min.css">
 <script type="text/javascript" src="../scripts/lib/jquery-3.1.1.min.js"></script>
-<!-- 
-<script type="text/javascript" src="../scripts/lib/jquery-lang-js/jquery-lang.js"></script>
-<script type="text/javascript" src="../scripts/util/dashboardMui.js"></script>
- -->
+<!-- <script type="text/javascript" src="../scripts/lib/jQuery3.3.1.js"></script> -->
+<script src="../scripts/lib/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+
+
+
+
 <script type="text/javascript" src="../scripts/util/callNativeInterface.js"></script>
 <script type="text/javascript" src="../scripts/util/jsAppInterface.js"></script>
 <script type="text/javascript" src="../scripts/page/home.js"></script>
@@ -22,26 +24,32 @@ $(document).ready(function(){
 	home.drawBackground();
 	home.init();
 	// loginAction.drawBackground();
-	// //$(window).on('resize',loginAction.drawBackground);
+	//$(window).on('resize',loginAction.drawBackground);
 	// loginAction.init();
 });
 
 </script>
 </head>
 <body>
-<div id="backgroundCanvas">
-	<div id="grad1"></div>
-	<div id="grad2"></div>
-	<!--<div id="gradBackgroud"></div>-->
-</div>
 <div id="top">
-	<div id="gradBackgroud"></div>
 </div>
-<div id="bottom">
+<div id="content">
 	<button id = "nissan" class="btn btn-lg btn-success btn-block">nissan</button>
 	<button id = "toyota" class="btn btn-lg btn-success btn-block">toyota</button>
 	<button id = "honda" class="btn btn-lg btn-success btn-block">honda</button>
-	<button id = "reference" class="btn btn-lg btn-success btn-block">參考資料</button>
+	
 </div>
+
+<div id="bottom">
+	<!-- <button id = "reference" class="btn btn-lg btn-success btn-block col-md-6 col-sm-6 col-xs-6 col-lg-6">參考資料</button>
+	<button id = "reference" class="btn btn-lg btn-success btn-block col-md-6 col-sm-6 col-xs-6 col-lg-6">參考資料</button> -->
+	<button id = "reference" class="btn btn-lg btn-success  col-md-6 col-sm-6 col-xs-6 col-lg-6">參考資料</button>
+	<!-- <button id = "call" class="btn btn-lg btn-success  col-md-6 col-sm-6 col-xs-6 col-lg-6">專家電話:0912345678</button>  -->
+	<!-- <p class= "col-md-6 col-sm-6 col-xs-6 col-lg-6">專業顧問:蔣先生 電話:0912345678</p> -->
+	<!-- <button id = "reference" class="btn btn-lg btn-success col-md-6 col-sm-6 col-xs-6 col-lg-6">參考資料</button> -->
+	
+</div>
+
+
 </body>
 </html>
