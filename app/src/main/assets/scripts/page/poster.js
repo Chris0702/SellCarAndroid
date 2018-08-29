@@ -37,11 +37,6 @@ function responseFunc(functionType, result){
 	
 	poster.init = function(){
 		console.log("=========poster============init")
-		$('#projArea,#userArea,#pwdArea,#rememberMeArea,#loginArea').hide();
-		$('#top').css('height','50%');
-		$('#bottom').css('height','calc(50% - 5vh)');
-		$('#bottom').css('margin-left','20%');
-		$('#bottom').css('margin-right','20%');
 		
 
 		$('#company').on('click',function(){
@@ -87,10 +82,24 @@ function responseFunc(functionType, result){
 	poster.setImageAll = function(resultObj){
 		var imgArr = resultObj.imgArr;
         var serverUrl = resultObj.serverUrl
+        var posterUrl = "../image/poster.jpg"
         console.log("======setImageAll======imgArr===========")
         console.log(imgArr)
         console.log("======setImageAll======serverUrl===========")
         console.log(serverUrl)
+        	console.log("======setImageAll======serverUrl=======11111====")
+        if(imgArr.length>0){
+        	posterUrl = serverUrl + '/' + imgArr[0];
+        }
+        console.log("======setImageAll======posterUrl===========")
+        console.log(posterUrl)
+        $('#content').children().remove();
+        var img = $('<img />', {
+            id: posterUrl,
+            src:  posterUrl,
+            width: '100%',
+            height: '100%'
+        }).appendTo($('#content'));
 	};
 
     global.poster = poster;
