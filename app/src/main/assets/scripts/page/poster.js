@@ -48,6 +48,7 @@ function responseFunc(functionType, result){
 	};
 
 	poster.setImageAll = function(resultObj){
+		$('#content').children().remove();
 		var imgArr = resultObj.imgArr;
         var serverUrl = resultObj.serverUrl
         var posterUrl = "../image/poster.jpg"
@@ -55,21 +56,27 @@ function responseFunc(functionType, result){
         console.log(imgArr)
         console.log("======setImageAll======serverUrl===========")
         console.log(serverUrl)
-        	console.log("======setImageAll======serverUrl=======11111====")
+        console.log("======setImageAll======serverUrl=======11111====")
         if(imgArr.length>0){
         	for(var i =0;i<imgArr.length;i++){
         		posterUrl = serverUrl + '/' + imgArr[i];
         		console.log("======setImageAll======posterUrl===========")
         		console.log(posterUrl)
-        		$('#content').children().remove();
         		var img = $('<img />', {
             	id: posterUrl,
             	src:  posterUrl,
             	width: '100%',
-            	height: '100%'
+            	height: '100%',
+            	class: 'poster'
         		}).appendTo($('#content'));
         		}
-        }  
+        }
+
+        $('.poster').on('click',function(){
+			console.log("poster  click")
+			callNativeInterface.changePage("pricePage","");
+		});
+
 	};
 
     global.poster = poster;

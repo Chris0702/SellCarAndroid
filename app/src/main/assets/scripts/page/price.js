@@ -57,6 +57,7 @@ function responseFunc(functionType, result){
 	};
 
 	price.setImageAll = function(resultObj){
+		$('#content').children().remove();
 		var imgArr = resultObj.imgArr;
         var serverUrl = resultObj.serverUrl
         var carUrl = "../image/poster.jpg"
@@ -64,13 +65,11 @@ function responseFunc(functionType, result){
         console.log(imgArr)
         console.log("======setImageAll======carUrl===========")
         console.log(carUrl)
-        	console.log("======setImageAll======serverUrl=======11111====")
         if(imgArr.length>0){
         	for(var i =0;i<imgArr.length;i++){
         		carUrl = serverUrl + '/' + imgArr[i];
         		console.log("======setImageAll======carUrl===========")
         		console.log(carUrl)
-        		$('#content').children().remove();
         		var img = $('<img />', {
             	id: carUrl,
             	src:  carUrl,

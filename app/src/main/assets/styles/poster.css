@@ -31,7 +31,9 @@ body{
 #content{
 	position: relative;
 	width: 100%;
-	height: calc(87% - 2px);
+	/*height: calc(87% - 5px);*/
+	height: 86%;
+	overflow:auto;
 	/*height: 44%;*/
 	/*margin-left:20%;
 	margin-right:20%;*/
