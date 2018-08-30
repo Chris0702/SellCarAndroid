@@ -137,6 +137,7 @@ public class Constants {
     public static final String FUNCTION_LIST="funcList";
     public static final String HTTP_FAIL="{"+DOUBLE_QUOTES+RESULT_REST_API+DOUBLE_QUOTES+":"+ONE+"}";
     public static final String URL="url";
+    public static final String FAVORITE_CAR="favoriteCar";
     public static final String START="start";
     public static final String COUNT="count";
     public static final String FILTERS="filters";

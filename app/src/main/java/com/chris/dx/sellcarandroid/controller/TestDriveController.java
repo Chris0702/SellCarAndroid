@@ -9,9 +9,14 @@ import com.chris.dx.sellcarandroid.tool.JavaScriptInterface;
 import com.chris.dx.sellcarandroid.tool.StringProcess;
 
 public class TestDriveController extends Controller {
+    private String carCompany;
+    private String favoriteCar;
     public TestDriveController(Activity activity, WebView webView, JavaScriptInterface javaScriptInterface, String pageName) {
         super(activity, webView, javaScriptInterface, pageName);
-        controlModel.toastString("TestDriveController");
+        carCompany = javaScriptInterface.getCarCompany();
+        favoriteCar = javaScriptInterface.getFavoriteCar();
+        controlModel.toastString("TestDriveController carCompany   "+carCompany);
+        controlModel.toastString("TestDriveController favoriteCar    "+favoriteCar);
     }
 
     public void executeCtrl() {

@@ -18,6 +18,19 @@
     //appJsInterface
     var callNativeInterface = new Object();
 
+    callNativeInterface.setFavoriteCar = function(favoriteCar) {
+        var cbObj = {};
+        cbObj.favoriteCar = favoriteCar;
+        var cbJsonStr = JSON.stringify(cbObj);
+        console.log('!!!!!!!!!!!!!setFavoriteCar!!!!!!!!!!!!!!!!');
+        if (typeof(appJsInterface) != 'undefined') {
+            console.log('!!!!!!!!!!!!!setFavoriteCar!!!!!!appJsInterface!!!!!!!!!!');
+            appJsInterface.setFavoriteCar(cbJsonStr);
+        } else {
+            callIosNativeApp('changePage', cbJsonStr);
+        }
+    };
+
      callNativeInterface.getCarsInfoByCompany = function() {
         console.log('!!!!!!!!!!!!!getCarsInfoByCompany!!!!!!!!!!!!!!!!');
         if (typeof(appJsInterface) != 'undefined') {

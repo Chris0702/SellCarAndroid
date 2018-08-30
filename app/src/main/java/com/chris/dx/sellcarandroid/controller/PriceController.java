@@ -9,9 +9,12 @@ import com.chris.dx.sellcarandroid.tool.JavaScriptInterface;
 import com.chris.dx.sellcarandroid.tool.StringProcess;
 
 public class PriceController extends Controller {
+    private String carCompany;
+
     public PriceController(Activity activity, WebView webView, JavaScriptInterface javaScriptInterface, String pageName) {
         super(activity, webView, javaScriptInterface, pageName);
         controlModel.toastString("PriceController");
+        carCompany = javaScriptInterface.getCarCompany();
     }
 
     public void executeCtrl() {

@@ -47,14 +47,7 @@ function responseFunc(functionType, result){
 
 	
 	testDrive.init = function(){
-		console.log("=========poster============init")
-		$('#projArea,#userArea,#pwdArea,#rememberMeArea,#loginArea').hide();
-		$('#top').css('height','50%');
-		$('#bottom').css('height','calc(50% - 5vh)');
-		$('#bottom').css('margin-left','20%');
-		$('#bottom').css('margin-right','20%');
-		
-
+		console.log("=========testDrive============init")
 		$('#company').on('click',function(){
 			console.log("company  click")
 			callNativeInterface.changePage("homePage","");
@@ -75,28 +68,14 @@ function responseFunc(functionType, result){
 			callNativeInterface.changePage("referencePage","");
 		});
 
-		$('#subscribe').on('click',function(){
-			console.log("subscribe  click")
-			callNativeInterface.orderTestDrive(name, company, phone, address, paymentType, carName, carCompany, carVersion, carColor, hopeTime);
-		});
+		// $('#subscribe').on('click',function(){
+		// 	console.log("subscribe  click")
+		// 	callNativeInterface.orderTestDrive(name, company, phone, address, paymentType, carName, carCompany, carVersion, carColor, hopeTime);
+		// });
 	};
 
 	testDrive.changePage = function(pageName){
 		callNativeInterface.changePage(pageName);
-	};
-
-	testDrive.drawBackground = function(){
-		// if(loginAction.currentDrawMode == 0){
-		// 	$('#grad2').hide();
-		// 	$('#grad1').show();
-		// 	$('#top').css('background-position', 'center 80%');
-		// 	$('#gradBackgroud').css('bottom', '35%');
-		// }else{
-		// 	$('#grad1').hide();
-		// 	$('#grad2').show();
-		// 	$('#top').css('background-position', 'center 100%');
-		// 	$('#gradBackgroud').css('bottom', '20%');
-		// }
 	};
 
     global.testDrive = testDrive;

@@ -34,8 +34,14 @@ public class JavaScriptInterface {
     private JSONObject localStorageMem;
     private ScrollView mainWebViewScroll;
 
+    //web_local_param
+    String carCompany;
+    String favoriteCar;
+
 
     public JavaScriptInterface(Activity activity, WebView webView, Model model, ScrollView view) {
+        carCompany = Constants.EMPTY_STRING;
+        favoriteCar = Constants.EMPTY_STRING;
         controlActivity = activity;
         controlWebView = webView;
         controlModel = model;
@@ -54,6 +60,14 @@ public class JavaScriptInterface {
 
     private void createObj() {
         localStorageMem = new JSONObject();
+    }
+
+    public String getCarCompany(){
+        return carCompany;
+    }
+
+    public String getFavoriteCar(){
+        return favoriteCar;
     }
 
     public WebView refreshWebview() {
@@ -234,20 +248,30 @@ public class JavaScriptInterface {
     }
 
     @JavascriptInterface
+    public void setFavoriteCar(final String JSONString) {
+        Log.d(TAG, "setFavoriteCar   " + JSONString);
+        JSONObject jsonObject = controlModel.getJsonObject(JSONString);
+        if (jsonObject != null) {
+//            String carCompany = controller.getCarCompany();
+            Object[] arg = new Object[1];
+            arg[0] = controlModel.getJSONProtString(Constants.FAVORITE_CAR, jsonObject);
+            favoriteCar = arg[0].toString();
+        }
+    }
+
+    @JavascriptInterface
     public void changePage(final String JSONString) {
         Log.d(TAG, "changePage   " + JSONString);
         JSONObject jsonObject = controlModel.getJsonObject(JSONString);
         if (jsonObject != null) {
-            String carCompany = controller.getCarCompany();
+//            String carCompany = controller.getCarCompany();
             Object[] arg = new Object[2];
             arg[0] = controlModel.getJSONProtString(Constants.URL, jsonObject);
             arg[1] = controlModel.getJSONProtString(Constants.COMPANY_TYPE, jsonObject);
-            setController(arg[0].toString());
-            if(arg[1].toString().equals(Constants.EMPTY_STRING)){
-                controller.setCarCompany(carCompany);
-            }else{
-                controller.setCarCompany(arg[1].toString());
+            if(!arg[1].toString().equals(Constants.EMPTY_STRING)){
+                carCompany = arg[1].toString();
             }
+            setController(arg[0].toString());
             controller.executeCtrl();
         }
     }
