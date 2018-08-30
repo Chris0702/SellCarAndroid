@@ -61,6 +61,10 @@ public class Controller {
         carCompany = company;
     }
 
+    public String getCarCompany() {
+        return carCompany;
+    }
+
     public void checkServerIsExistResponse(boolean result, final String receiveMessage) {
         if (result) {
             if (controlModel.getHttpResult(receiveMessage)) {

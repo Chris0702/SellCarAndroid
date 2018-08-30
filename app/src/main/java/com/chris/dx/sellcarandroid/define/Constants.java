@@ -4,8 +4,8 @@ package com.chris.dx.sellcarandroid.define;
  * Created by Chris.Wu on 2016/10/21.
  */
 public class Constants {
-//    public static final String SERVER_URL = "http://172.16.12.122:3000";
-        public static final String SERVER_URL = "http://192.168.0.11:3000";
+    public static final String SERVER_URL = "http://172.16.12.122:3000";
+//        public static final String SERVER_URL = "http://192.168.0.11:3000";
 //    public static String SERVER_URL = "http://172.18.2.42:81";
 //public static final String SERVER_URL = "http://172.18.2.42:3000";
 //public static final String SERVER_URL = "http://54.249.42.33:81";

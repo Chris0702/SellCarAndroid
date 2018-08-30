@@ -145,7 +145,7 @@ public class JavaScriptInterface {
                 break;
             case Constants.PRICE_PAGE_NAME:
                 Log.d(TAG, "new mergeImageController");
-                controller = factory.createPriceController(controlActivity, controlWebView, self, Constants.MERGE_IMAGE_PAGE_NAME);
+                controller = factory.createPriceController(controlActivity, controlWebView, self, Constants.PRICE_PAGE_NAME);
                 Log.d(TAG, "new mergeImageController ok");
                 break;
             case Constants.TEST_DRIVE_PAGE_NAME:
@@ -233,11 +233,16 @@ public class JavaScriptInterface {
         Log.d(TAG, "changePage   " + JSONString);
         JSONObject jsonObject = controlModel.getJsonObject(JSONString);
         if (jsonObject != null) {
+            String carCompany = controller.getCarCompany();
             Object[] arg = new Object[2];
             arg[0] = controlModel.getJSONProtString(Constants.URL, jsonObject);
             arg[1] = controlModel.getJSONProtString(Constants.COMPANY_TYPE, jsonObject);
             setController(arg[0].toString());
-            controller.setCarCompany(arg[1].toString());
+            if(arg[1].toString().equals(Constants.EMPTY_STRING)){
+                controller.setCarCompany(carCompany);
+            }else{
+                controller.setCarCompany(arg[1].toString());
+            }
             controller.executeCtrl();
         }
     }

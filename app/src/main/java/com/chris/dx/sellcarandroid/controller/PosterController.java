@@ -11,7 +11,7 @@ import com.chris.dx.sellcarandroid.tool.StringProcess;
 public class PosterController extends Controller {
     public PosterController(Activity activity, WebView webView, JavaScriptInterface javaScriptInterface, String pageName) {
         super(activity, webView, javaScriptInterface, pageName);
-        controlModel.toastString("PosterController");
+//        controlModel.toastString("PosterController");
     }
 
     public void executeCtrl() {
@@ -24,11 +24,9 @@ public class PosterController extends Controller {
     }
 
     public void executeCmd(String cmd, Object[] arg) {
-        Log.d("debug", "home  exe");
+        Log.d("debug", "poster  exe");
         switch (cmd) {
             case Constants.GET_CAR_IMAGE_PATH_BY_FOLDER_COMMAND:
-//                controlModel.logServerDB();
-//                getFunctionList();
                 controlModel.toastString(arg[0].toString());
                 getCarImagePathByFolder(arg[0].toString());
                 break;
@@ -57,6 +55,8 @@ public class PosterController extends Controller {
     }
 
     private void getCarImagePathByFolder(final String folderName){
+        controlModel.toastString("PosterController  carCompany    "+carCompany);
+        controlModel.toastString("PosterController folderName     "+folderName);
         String reqFolderName = StringProcess.getCompanyLocalImageFolderPath(carCompany,folderName);
         controlHttpClient.getLocalPathAll(reqFolderName,this);
     }
