@@ -18,6 +18,16 @@
     //appJsInterface
     var callNativeInterface = new Object();
 
+     callNativeInterface.getCarsInfoByCompany = function() {
+        console.log('!!!!!!!!!!!!!getCarsInfoByCompany!!!!!!!!!!!!!!!!');
+        if (typeof(appJsInterface) != 'undefined') {
+            console.log('!!!!!!!!!!!!!getCarsInfoByCompany!!!!!!appJsInterface!!!!!!!!!!');
+            appJsInterface.getCarsInfoByCompany();
+        } else {
+            callIosNativeApp('changePage', cbJsonStr);
+        }
+    };
+
     callNativeInterface.orderTestDrive = function(name, company, phone, address, paymentType, carName, carCompany, carVersion, carColor, hopeTime) {
         console.log('!!!!!!!!!!!!!orderTestDrive!!!!!!!!!!!!!!!!');
         var cbObj = {};
@@ -31,7 +41,6 @@
         cbObj.car_version = carVersion;
         cbObj.car_color = carColor;
         cbObj.hopeTime = hopeTime;
-
         var cbJsonStr = JSON.stringify(cbObj);
         if (typeof(appJsInterface) != 'undefined') {
             console.log('!!!!!!!!!!!!!orderTestDrive!!!!!!appJsInterface!!!!!!!!!!');

@@ -42,6 +42,11 @@ public class Constants {
     public static final String JAVASCRIPT_PARAMETER_FOR_ANDROID = "jsAppInterface";
 
     public static final String SET_IMAGE_ALL_JAVASCRIPT = "setImageAll";
+    public static final String SET_CARS_INFO_JAVASCRIPT = "setCarsInfo";
+
+
+
+
     public static final String SET_MERGE_IMAGE_ALL_JAVASCRIPT = "setMergeImageAll";
     public static final String SET_MERGE_IMAGE_RESULT_JAVASCRIPT = "setMergeImageResult";
 
@@ -100,6 +105,7 @@ public class Constants {
     public static final int BITMAP_COMPRESS_RATIO = 30;
     public static final String SERVER_URL_STRING="serverUrl";
     public static final String IMAGE_ARRAY="imgArr";
+    public static final String CARS_INFO="carsInfo";
     public static final String OPEN_BRACE = "{";
     public static final String CLOSE_BRACE = "}";
     public static final String TOKEN = "token";
@@ -232,6 +238,7 @@ public class Constants {
     //controller command
     public static final String GET_CAR_IMAGE_PATH_BY_FOLDER_COMMAND = "getCarImagePathByFolder";
     public static final String ORDER_TEST_DRIVE_COMMAND = "orderTestDrive";
+    public static final String GET_CARS_INFO_BY_COMPANY_COMMAND = "getCarsInfoByCompany";
 
     public static final String GET_MERGE_IMAGE_ALL_SRC_COMMAND = "getMergeImageAllSrc";
     public static final String MERGE_IMAGE_EXE_COMMAND = "mergeImageExe";
@@ -278,6 +285,7 @@ public class Constants {
     //rest api
     public static String SERVER_IS_EXIST_API = SERVER_URL + "/server/isExist";
     public static String GET_LOCAL_PATH_ALL_API = SERVER_URL + "/file/getLocalPathAll";
+    public static String GET_CARS_INFO_BY_COMPANY_API = SERVER_URL + "/car/getCarsInfoByCompany";
     public static String ORDER_TEST_DRIVE_API = SERVER_URL + "/testDrive/orderTestDrive";
     public static String UPLOAD_IMAGE_API = SERVER_URL + "/file/uploadMergeImageMobile";
 

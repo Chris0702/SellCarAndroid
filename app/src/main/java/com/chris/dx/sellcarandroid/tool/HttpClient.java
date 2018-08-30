@@ -26,6 +26,7 @@ import java.util.List;
 //
 
 import com.chris.dx.sellcarandroid.controller.Controller;
+import com.chris.dx.sellcarandroid.controller.PriceController;
 import com.chris.dx.sellcarandroid.controller.TestDriveController;
 import com.chris.dx.sellcarandroid.define.Constants;
 
@@ -121,6 +122,32 @@ public class HttpClient {
                 String receiveMessage = response.body().string();
                 Log.d("http", receiveMessage);
                 controller.checkServerIsExistResponse(true,receiveMessage);
+            }
+        });
+    }
+
+    public void getCarsInfoByCompany(final String company,final PriceController priceController) {
+        Log.d("debug", "http  rest api getLocalPathAll  ");
+        String requestUrl = StringProcess.getCarsInfoByCompanyApiUrl(company);
+        Log.d("debug", requestUrl);
+        Request request = new Request.Builder()
+                .url(requestUrl)
+                .build();
+        Call call = okHttpClient.newCall(request);
+        call.enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+//                controller.checkServerIsExistResponse(false,Constants.EMPTY_STRING);
+//                controller.getLocalPathAllResponse(Constants.EMPTY_STRING);
+                priceController.getCarsInfoByCompanyResponse(Constants.EMPTY_STRING);
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                String receiveMessage = response.body().string();
+                Log.d("http", receiveMessage);
+//                controller.getLocalPathAllResponse(receiveMessage);
+                priceController.getCarsInfoByCompanyResponse(receiveMessage);
             }
         });
     }

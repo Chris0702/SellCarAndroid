@@ -54,7 +54,11 @@ public class StringProcess {
         return Constants.GET_LOCAL_PATH_ALL_API + "?foldername="+folderName;
     }
 
-        public static String getJavascriptFunctionStringBy1WayStringArrayString(String stringArray, String stringName, String functionName) {
+    public static String getCarsInfoByCompanyApiUrl(String company) {
+        return Constants.GET_CARS_INFO_BY_COMPANY_API + "?company="+company;
+    }
+
+    public static String getJavascriptFunctionStringBy1WayStringArrayString(String stringArray, String stringName, String functionName) {
         String arg = "{" + Constants.DOUBLE_QUOTES + stringName + Constants.DOUBLE_QUOTES + ":" + stringArray + "}";
         String result = Constants.JAVASCRIPT + ":" + Constants.JAVASCRIPT_PARAMETER_FOR_ANDROID + "." + functionName + "('" + arg + "')";
         return result;
