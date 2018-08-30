@@ -58,6 +58,10 @@ public class StringProcess {
         return Constants.GET_CARS_INFO_BY_COMPANY_API + "?company="+company;
     }
 
+    public static String getCarsInfoByIdApiUrl(String id) {
+        return Constants.GET_CARS_INFO_BY_ID_API + "?id="+id;
+    }
+
     public static String getJavascriptFunctionStringBy1WayStringArrayString(String stringArray, String stringName, String functionName) {
         String arg = "{" + Constants.DOUBLE_QUOTES + stringName + Constants.DOUBLE_QUOTES + ":" + stringArray + "}";
         String result = Constants.JAVASCRIPT + ":" + Constants.JAVASCRIPT_PARAMETER_FOR_ANDROID + "." + functionName + "('" + arg + "')";

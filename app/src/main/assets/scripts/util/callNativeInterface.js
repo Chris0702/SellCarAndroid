@@ -31,6 +31,16 @@
         }
     };
 
+    callNativeInterface.getCarsInfoById = function() {
+        console.log('!!!!!!!!!!!!!getCarsInfoById!!!!!!!!!!!!!!!!');
+        if (typeof(appJsInterface) != 'undefined') {
+            console.log('!!!!!!!!!!!!!getCarsInfoById!!!!!!appJsInterface!!!!!!!!!!');
+            appJsInterface.getCarsInfoById();
+        } else {
+            callIosNativeApp('changePage', cbJsonStr);
+        }
+    };
+
      callNativeInterface.getCarsInfoByCompany = function() {
         console.log('!!!!!!!!!!!!!getCarsInfoByCompany!!!!!!!!!!!!!!!!');
         if (typeof(appJsInterface) != 'undefined') {

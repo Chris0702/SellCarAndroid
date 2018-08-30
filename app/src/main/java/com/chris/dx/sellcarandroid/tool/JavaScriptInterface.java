@@ -228,6 +228,11 @@ public class JavaScriptInterface {
     }
 
     @JavascriptInterface
+    public void getCarsInfoById() {
+        controller.executeCmd(Constants.GET_CARS_INFO_BY_ID_COMMAND, null);
+    }
+
+    @JavascriptInterface
     public void mergeImageExe(final String JSONString) {
         Log.d(TAG, "  mergeImageExe    JSONString   " + JSONString);
         Object[] arg = new Object[3];

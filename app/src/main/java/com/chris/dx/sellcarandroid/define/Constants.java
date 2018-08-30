@@ -4,8 +4,8 @@ package com.chris.dx.sellcarandroid.define;
  * Created by Chris.Wu on 2016/10/21.
  */
 public class Constants {
-    public static final String SERVER_URL = "http://172.16.12.122:3000";
-//        public static final String SERVER_URL = "http://192.168.0.11:3000";
+//    public static final String SERVER_URL = "http://172.16.12.122:3000";
+        public static final String SERVER_URL = "http://192.168.0.11:3000";
 //    public static String SERVER_URL = "http://172.18.2.42:81";
 //public static final String SERVER_URL = "http://172.18.2.42:3000";
 //public static final String SERVER_URL = "http://54.249.42.33:81";
@@ -240,6 +240,7 @@ public class Constants {
     public static final String GET_CAR_IMAGE_PATH_BY_FOLDER_COMMAND = "getCarImagePathByFolder";
     public static final String ORDER_TEST_DRIVE_COMMAND = "orderTestDrive";
     public static final String GET_CARS_INFO_BY_COMPANY_COMMAND = "getCarsInfoByCompany";
+    public static final String GET_CARS_INFO_BY_ID_COMMAND = "getCarsInfoById";
 
     public static final String GET_MERGE_IMAGE_ALL_SRC_COMMAND = "getMergeImageAllSrc";
     public static final String MERGE_IMAGE_EXE_COMMAND = "mergeImageExe";
@@ -287,6 +288,7 @@ public class Constants {
     public static String SERVER_IS_EXIST_API = SERVER_URL + "/server/isExist";
     public static String GET_LOCAL_PATH_ALL_API = SERVER_URL + "/file/getLocalPathAll";
     public static String GET_CARS_INFO_BY_COMPANY_API = SERVER_URL + "/car/getCarsInfoByCompany";
+    public static String GET_CARS_INFO_BY_ID_API = SERVER_URL + "/car/getCarsInfoById";
     public static String ORDER_TEST_DRIVE_API = SERVER_URL + "/testDrive/orderTestDrive";
     public static String UPLOAD_IMAGE_API = SERVER_URL + "/file/uploadMergeImageMobile";
 

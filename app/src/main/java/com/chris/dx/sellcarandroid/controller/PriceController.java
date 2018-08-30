@@ -66,9 +66,9 @@ public class PriceController extends Controller {
             public void run() {
                 String resString =  controlModel.getJSONProtString(Constants.RES_STRING_REST_API,receiveMessage);
                 Log.d("debug", "getHttpResult   resString "+resString);
-                String setImageAllUrl = StringProcess.getJavascriptFunctionStringByArrayStringAndString(Constants.CARS_INFO, resString, Constants.SERVER_URL_STRING, Constants.SERVER_URL, Constants.SET_CARS_INFO_JAVASCRIPT);
-                Log.d("debug", "getCarsInfoByCompanyResponse ok       " + setImageAllUrl);
-                mainWebView.loadUrl(setImageAllUrl);
+                String setCarsInfoUrl = StringProcess.getJavascriptFunctionStringByArrayStringAndString(Constants.CARS_INFO, resString, Constants.SERVER_URL_STRING, Constants.SERVER_URL, Constants.SET_CARS_INFO_JAVASCRIPT);
+                Log.d("debug", "getCarsInfoByCompanyResponse ok       " + setCarsInfoUrl);
+                mainWebView.loadUrl(setCarsInfoUrl);
                 Log.d("debug", "getCarsInfoByCompanyResponse ok");
             }
         });
