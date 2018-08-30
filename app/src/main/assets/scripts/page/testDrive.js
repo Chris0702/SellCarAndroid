@@ -75,10 +75,20 @@ function responseFunc(functionType, result){
 			callNativeInterface.changePage("referencePage","");
 		});
 		callNativeInterface.getCarsInfoById();
-		// $('#subscribe').on('click',function(){
-		// 	console.log("subscribe  click")
-		// 	callNativeInterface.orderTestDrive(name, company, phone, address, paymentType, carName, carCompany, carVersion, carColor, hopeTime);
-		// });
+		$('#subscribe').on('click',function(){
+			console.log("subscribe  click")
+			name = $('#name').val();
+			company = $('#company').val();
+			phone = $('#phone').val();
+			address = $('#address').val();
+			paymentType = $('#paymentType').val();
+			carColor = $('#carColor').val();
+			hopeTime = $('#hopeTime').val();
+			
+
+
+			callNativeInterface.orderTestDrive(name, company, phone, address, paymentType, carName, carCompany, carVersion, carColor, hopeTime);
+		});
 	};
 
 	testDrive.changePage = function(pageName){
@@ -86,7 +96,7 @@ function responseFunc(functionType, result){
 	};
 
 	testDrive.setCarsInfo = function(resultObj){
-		$('#content').children().remove();
+		// $('#content').children().remove();
 		console.log("======setCarsInfo======resultObj.carsInfo===========")
         console.log(resultObj.carsInfo)
         console.log("======setCarsInfo======resultObj.serverUrl===========")
@@ -110,6 +120,14 @@ function responseFunc(functionType, result){
         	console.log(car.description)
         	console.log("======@@@@@@======car.imgPath===========")
         	console.log(car.imgPath)
+        	carName = car.name;
+        	carCompany = car.company;
+        	$('#carCompany').html(car.company);
+        	$('#carName').html(car.name);
+        	for(var i=0;i<car.color.length;i++){
+        		$('#carColor').append($("<option></option>").attr("value", car.color[i]).text(car.color[i]));
+        		
+        	}
 
 		}
 		

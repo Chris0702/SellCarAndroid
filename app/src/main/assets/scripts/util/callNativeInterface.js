@@ -37,7 +37,7 @@
             console.log('!!!!!!!!!!!!!getCarsInfoById!!!!!!appJsInterface!!!!!!!!!!');
             appJsInterface.getCarsInfoById();
         } else {
-            callIosNativeApp('changePage', cbJsonStr);
+            callIosNativeApp('changePage', );
         }
     };
 
