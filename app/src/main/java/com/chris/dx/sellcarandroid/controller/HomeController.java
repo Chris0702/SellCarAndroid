@@ -20,7 +20,7 @@ public class HomeController extends Controller {
 
     public HomeController(Activity activity, WebView webView, JavaScriptInterface javaScriptInterface, String pageName) {
         super(activity, webView, javaScriptInterface, pageName);
-        controlModel.toastString("home");
+//        controlModel.toastString("home");
     }
 
     public void executeCtrl() {

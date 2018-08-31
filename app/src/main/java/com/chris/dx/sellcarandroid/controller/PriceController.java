@@ -13,7 +13,7 @@ public class PriceController extends Controller {
 
     public PriceController(Activity activity, WebView webView, JavaScriptInterface javaScriptInterface, String pageName) {
         super(activity, webView, javaScriptInterface, pageName);
-        controlModel.toastString("PriceController");
+//        controlModel.toastString("PriceController");
         carCompany = javaScriptInterface.getCarCompany();
     }
 

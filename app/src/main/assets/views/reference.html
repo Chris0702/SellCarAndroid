@@ -1,47 +1,40 @@
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-<title>imageMerge</title>
-<link rel="stylesheet" href="../styles/bootstrap-3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="../styles/reference.css" />
-<!-- <link rel="stylesheet" type="text/css" href="./styles/commonStyle.css" />
-<link rel="stylesheet" type="text/css" href="./styles/loginAction.css" /> -->
-<script type="text/javascript" src="../scripts/lib/jquery-3.1.1.min.js"></script>
-<!-- 
-<script type="text/javascript" src="../scripts/lib/jquery-lang-js/jquery-lang.js"></script>
-<script type="text/javascript" src="../scripts/util/dashboardMui.js"></script>
- -->
-<script type="text/javascript" src="../scripts/util/callNativeInterface.js"></script>
-<script type="text/javascript" src="../scripts/util/jsAppInterface.js"></script>
-<script type="text/javascript" src="../scripts/page/reference.js"></script>
-
-
-<script type="text/javascript">
-$(document).ready(function(){
-	reference.drawBackground();
-	reference.init();
-	// loginAction.drawBackground();
-	// //$(window).on('resize',loginAction.drawBackground);
-	// loginAction.init();
-});
-
-</script>
-</head>
-<body>
-<div id="backgroundCanvas">
-	<div id="grad1"></div>
-	<div id="grad2"></div>
-	<!--<div id="gradBackgroud"></div>-->
-</div>
-<div id="top">
-	<div id="gradBackgroud"></div>
-</div>
-<div id="bottom">
-	<button id = "company" class="btn btn-lg btn-success btn-block">車廠</button>
-	<button id = "poster" class="btn btn-lg btn-success btn-block">優惠</button>
-	<button id = "price" class="btn btn-lg btn-success btn-block">價格</button>
-	<button id = "reference" class="btn btn-lg btn-success btn-block">參考資料</button>
-</div>
-</body>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+		<title>reference</title>
+		<link rel="stylesheet" href="../styles/bootstrap-3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="../styles/reference.css" />
+		<script type="text/javascript" src="../scripts/lib/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="../scripts/util/callNativeInterface.js"></script>
+		<script type="text/javascript" src="../scripts/util/jsAppInterface.js"></script>
+		<script type="text/javascript" src="../scripts/page/reference.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function() {
+		 	reference.init();
+		});
+		</script>
+	</head>
+	<body>
+		<div id="content">
+			<div id = "referenceTitle" class="item col-md-12 col-sm-12 col-xs-12 col-lg-12">參考資料</div>
+			<br><br>
+			<div class="item col-md-12 col-sm-12 col-xs-12 col-lg-12">
+				<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">Nissan 台灣</div>
+				<br><br>
+				<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">http://new.nissan.com.tw/nissan</div>
+			</div>
+			<div class="item col-md-12 col-sm-12 col-xs-12 col-lg-12">
+				<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">Toyota官網</div>
+				<br><br>
+				<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">https://www.toyota.com.tw/</div>
+			</div>
+			<div class="item col-md-12 col-sm-12 col-xs-12 col-lg-12">
+				<button id="back" class=" btn-success  col-md-6 col-sm-6 col-xs-6 col-lg-6">返回</button>
+			</div>
+		</div>
+		<div id="bottom">
+			<button id="call" class="btn-ref btn  btn-success  col-md-12 col-sm-12 col-xs-12 col-lg-12">專家電話:0912345678</button>
+		</div>
+	</body>
 </html>

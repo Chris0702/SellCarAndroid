@@ -15,8 +15,8 @@ public class TestDriveController extends Controller {
         super(activity, webView, javaScriptInterface, pageName);
         carCompany = javaScriptInterface.getCarCompany();
         favoriteCar = javaScriptInterface.getFavoriteCar();
-        controlModel.toastString("TestDriveController carCompany   "+carCompany);
-        controlModel.toastString("TestDriveController favoriteCar    "+favoriteCar);
+//        controlModel.toastString("TestDriveController carCompany   "+carCompany);
+//        controlModel.toastString("TestDriveController favoriteCar    "+favoriteCar);
     }
 
     public void executeCtrl() {
@@ -51,7 +51,7 @@ public class TestDriveController extends Controller {
         mainWebView.addJavascriptInterface(controlJavaScriptInterface, Constants.ANDROID_PARAMETER_FOR_JAVASCRIPT);
     }
     public void getCarsInfoByIdResponse(final String receiveMessage){
-        controlModel.toastString("getCarsInfoByIdResponse ing");
+//        controlModel.toastString("getCarsInfoByIdResponse ing");
         if (controlModel.getHttpResult(receiveMessage)) {
 //                controlModel.toastString("server is exist");
             controlActivity.runOnUiThread(new Runnable() {
@@ -71,24 +71,25 @@ public class TestDriveController extends Controller {
     }
 
     private void getCarsInfoById(){
-        controlModel.toastString("getCarsInfoById ing");
+//        controlModel.toastString("getCarsInfoById ing");
         controlHttpClient.getCarsInfoById(favoriteCar,this);
     }
 
     private void orderTestDrive(final String name,final String company,final String phone,final String address,final String paymentType,final String carName,final String carCompany,final String carVersion,final String carColor,final String hopeTime){
-        controlModel.toastString("orderTestDrive ing");
+//        controlModel.toastString("orderTestDrive ing");
         controlHttpClient.orderTestDrive( name, company, phone, address, paymentType,carName, carCompany, carVersion,carColor, hopeTime,this);
     }
 
     public void orderTestDriveResponse(boolean result, final String receiveMessage) {
         if (result) {
             if (controlModel.getHttpResult(receiveMessage)) {
-                controlModel.toastString("成功");
+                controlModel.toastString(Constants.ORDER_TEST_DRIVE_SUCCESS);
+                controlJavaScriptInterface.changePageByPageName(Constants.PRICE_PAGE_NAME);
             } else {
-                controlModel.toastString("失敗");
+                controlModel.toastString(Constants.ORDER_TEST_DRIVE_FAIL);
             }
         } else {
-            controlModel.toastString("失敗");
+            controlModel.toastString(Constants.ORDER_TEST_DRIVE_FAIL);
         }
     }
 }

@@ -4,8 +4,8 @@ package com.chris.dx.sellcarandroid.define;
  * Created by Chris.Wu on 2016/10/21.
  */
 public class Constants {
-//    public static final String SERVER_URL = "http://172.16.12.122:3000";
-        public static final String SERVER_URL = "http://192.168.0.11:3000";
+    public static final String SERVER_URL = "http://172.16.12.122:3000";
+//        public static final String SERVER_URL = "http://192.168.0.11:3000";
 //    public static String SERVER_URL = "http://172.18.2.42:81";
 //public static final String SERVER_URL = "http://172.18.2.42:3000";
 //public static final String SERVER_URL = "http://54.249.42.33:81";
@@ -101,6 +101,9 @@ public class Constants {
 
 
     //util
+    public static final String ORDER_TEST_DRIVE_SUCCESS="預約試乘成功，稍後有專人聯繫您。";
+    public static final String ORDER_TEST_DRIVE_FAIL="預約試乘失敗，請再試一次。";
+    public static final String ORDER_TEST_DRIVE_INPUT_FORMAT_ERROR="輸入格式錯誤";
     public static final int PHOTO = 99;
     public static final int BITMAP_COMPRESS_RATIO = 30;
     public static final String SERVER_URL_STRING="serverUrl";

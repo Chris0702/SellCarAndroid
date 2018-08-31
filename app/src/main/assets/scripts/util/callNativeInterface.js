@@ -18,6 +18,14 @@
     //appJsInterface
     var callNativeInterface = new Object();
 
+    callNativeInterface.toast = function(toastString) {
+        if (typeof(appJsInterface) != 'undefined') {
+            appJsInterface.toast(toastString);
+        } else {
+            callIosNativeApp('changePage', cbJsonStr);
+        }
+    };
+
     callNativeInterface.setFavoriteCar = function(favoriteCar) {
         var cbObj = {};
         cbObj.favoriteCar = favoriteCar;

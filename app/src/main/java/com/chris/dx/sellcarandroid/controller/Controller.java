@@ -31,39 +31,20 @@ public class Controller {
     protected String controlPageName;
     protected Model controlModel;
     protected HttpClient controlHttpClient;
-//    protected String carCompany;
 
     public Controller() {
         controlPageName = Constants.CONTROL_PAGE_NAME;
     }
 
-    //
     public Controller(Activity activity, WebView webView, JavaScriptInterface javaScriptInterface, String pageName) {
-        //factory = new Factory();
-//        carCompany =Constants.EMPTY_STRING;
         controlPageName = pageName;
         controlActivity = activity;
         mainWebView = webView;
         controlJavaScriptInterface = javaScriptInterface;
         controlModel = javaScriptInterface.getControlModel();
         controlHttpClient = factory.createHttpClient();
-//        lang=controlModel.getLangObject(controlModel.getLang());
-        controlActivity.runOnUiThread(new Runnable() {
-            //  @Override
-            public void run() {
-                mainWebView = controlJavaScriptInterface.refreshWebview();
-            }
-        });
         controlHttpClient.checkServerIsExist(this);
     }
-
-//    public void setCarCompany( String company) {
-//        carCompany = company;
-//    }
-//
-//    public String getCarCompany() {
-//        return carCompany;
-//    }
 
     public void checkServerIsExistResponse(boolean result, final String receiveMessage) {
         if (result) {

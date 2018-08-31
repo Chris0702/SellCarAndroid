@@ -30,7 +30,7 @@ public class PosterController extends Controller {
         Log.d("debug", "poster  exe");
         switch (cmd) {
             case Constants.GET_CAR_IMAGE_PATH_BY_FOLDER_COMMAND:
-                controlModel.toastString(arg[0].toString());
+//                controlModel.toastString(arg[0].toString());
                 getCarImagePathByFolder(arg[0].toString());
                 break;
             default:
@@ -58,8 +58,8 @@ public class PosterController extends Controller {
     }
 
     private void getCarImagePathByFolder(final String folderName){
-        controlModel.toastString("PosterController  carCompany    "+carCompany);
-        controlModel.toastString("PosterController folderName     "+folderName);
+//        controlModel.toastString("PosterController  carCompany    "+carCompany);
+//        controlModel.toastString("PosterController folderName     "+folderName);
         String reqFolderName = StringProcess.getCompanyLocalImageFolderPath(carCompany,folderName);
         controlHttpClient.getLocalPathAll(reqFolderName,this);
     }

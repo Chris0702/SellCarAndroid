@@ -1,11 +1,11 @@
-let name = "克里斯";
-let company = "克里斯公司";
-let phone = "0909636123";
+let name = "";
+let company = "";
+let phone = "";
 let address = "台北市文山區";
 let paymentType = "現金";
 let carName ="閃電霹靂車";
 let carCompany = "管生車隊";
-let carVersion = "阿斯拉1234";
+let carVersion = "";
 let carColor = "金色";
 let hopeTime = "3000年7月2日";
 
@@ -78,16 +78,17 @@ function responseFunc(functionType, result){
 		$('#subscribe').on('click',function(){
 			console.log("subscribe  click")
 			name = $('#name').val();
-			company = $('#company').val();
+			company = $('#user_company').val();
 			phone = $('#phone').val();
 			address = $('#address').val();
 			paymentType = $('#paymentType').val();
 			carColor = $('#carColor').val();
-			hopeTime = $('#hopeTime').val();
-			
-
-
-			callNativeInterface.orderTestDrive(name, company, phone, address, paymentType, carName, carCompany, carVersion, carColor, hopeTime);
+			hopeTime = $('#hopeDate').val()+" "+$('#hopeTime').val();
+			if(name==""||company==""||phone==""){
+				callNativeInterface.toast("姓名、電話、公司&機構 未填寫");
+			}else{
+				callNativeInterface.orderTestDrive(name, company, phone, address, paymentType, carName, carCompany, carVersion, carColor, hopeTime);
+			}
 		});
 	};
 

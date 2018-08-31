@@ -10,7 +10,7 @@ import com.chris.dx.sellcarandroid.tool.JavaScriptInterface;
 public class ReferenceController extends Controller {
     public ReferenceController(Activity activity, WebView webView, JavaScriptInterface javaScriptInterface, String pageName) {
         super(activity, webView, javaScriptInterface, pageName);
-        controlModel.toastString("ReferenceController");
+//        controlModel.toastString("ReferenceController");
     }
 
     public void executeCtrl() {
