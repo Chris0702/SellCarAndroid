@@ -105,7 +105,7 @@ public class HttpClient {
         return okHttpClient.newCall(request);
     }
 
-    public void checkServerIsExist(final Controller controller) {
+    public void checkServerIsExist(final JavaScriptInterface javaScriptInterface) {
         Log.d("debug", "http  rest api getWebAccessProjectList  ");
         Request request = new Request.Builder()
                 .url(Constants.SERVER_IS_EXIST_API)
@@ -114,14 +114,14 @@ public class HttpClient {
         call.enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-                controller.checkServerIsExistResponse(false,Constants.EMPTY_STRING);
+                javaScriptInterface.checkServerIsExistResponse(false,Constants.EMPTY_STRING);
             }
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 String receiveMessage = response.body().string();
                 Log.d("http", receiveMessage);
-                controller.checkServerIsExistResponse(true,receiveMessage);
+                javaScriptInterface.checkServerIsExistResponse(true,receiveMessage);
             }
         });
     }
@@ -237,4 +237,56 @@ public class HttpClient {
             }
         });
     }
+
+    public void sendMessage2SupportLine(final String lineAuth,final String message, final JavaScriptInterface javaScriptInterface) {
+        RequestBody requestBody = new FormBody.Builder()
+                .add(Constants.LINE_MESSAGE_NAME, message)
+                .build();
+        Request request = new Request.Builder()
+                .url(Constants.LINE_NOTIFY_URL)
+                .post(requestBody)
+                .addHeader(Constants.LINE_AUTH_NAME, Constants.LINE_SUPPORT_AUTH)
+                .build();
+        Call call = okHttpClient.newCall(request);
+        call.enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                Log.d("http", "http rest api  sendLineMessage  fail         "+e);
+                javaScriptInterface.sendMessage2SupportLineResponse(false,Constants.EMPTY_STRING);
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                Log.d("http", "http rest api  sendLineMessage  success  ");
+                String receiveMessage = response.body().string();
+                Log.d("http", "http rest api  sendLineMessage  success   receiveMessage   " + receiveMessage);
+                javaScriptInterface.sendMessage2SupportLineResponse(true,receiveMessage);
+            }
+        });
+    }
+
+    public void updateServerUrl(final JavaScriptInterface javaScriptInterface) {
+        Log.d("debug", "http  rest api getLocalPathAll  ");
+        String requestUrl = Constants.GET_SERVER_URL_REST_API;
+        Log.d("debug", requestUrl);
+        Request request = new Request.Builder()
+                .url(requestUrl)
+                .build();
+        Call call = okHttpClient.newCall(request);
+        call.enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+//                controller.checkServerIsExistResponse(false,Constants.EMPTY_STRING);
+                javaScriptInterface.updateServerUrlResponse(false,Constants.EMPTY_STRING);
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                String receiveMessage = response.body().string();
+                Log.d("http", receiveMessage);
+                javaScriptInterface.updateServerUrlResponse(true,receiveMessage);
+            }
+        });
+    }
+
 }

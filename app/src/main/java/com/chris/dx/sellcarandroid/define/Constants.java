@@ -5,10 +5,24 @@ package com.chris.dx.sellcarandroid.define;
  */
 public class Constants {
 //    public static final String SERVER_URL = "http://172.16.12.122:3000";
-        public static final String SERVER_URL = "http://192.168.0.11:3000";
+//        public static  String SERVER_URL = "http://192.168.0.11:3000";
 //    public static String SERVER_URL = "http://172.18.2.42:81";
 //public static final String SERVER_URL = "http://172.18.2.42:3000";
 //public static final String SERVER_URL = "http://54.249.42.33:81";
+public static  String SERVER_URL = "";
+    public static final String GET_SERVER_URL_REST_API = "https://raw.githubusercontent.com/Chris0702/sellCarServer/master/lib/setting/server_url.txt";
+
+
+    //line
+    public static final String LINE_NOTIFY_URL = "https://notify-api.line.me/api/notify";
+    public static final String LINE_SUPPORT_AUTH = "Bearer BVcrSpv8eNjk4KjErJvAE1KjvFNc6X2kcI30u0njaNf";
+    public static final String LINE_AUTH_NAME = "Authorization";
+    public static final String LINE_MESSAGE_NAME = "message";
+
+    public static final String PLEASE_CHECK_NETWORK = "請檢察網際網路是否正常";
+    public static final String SERVER_ABMORMAL = "平台維護中請稍後使用";
+    public static final String SERVER_ABMORMAL_SUPPORT = "server 異常請快去檢查!!!";
+    public static final String SERVER_GIT_URL_ABMORMAL_SUPPORT = "github 異常，抓取不到 server url，請快去檢查!!!";
 
 
     public static final boolean PUSH_MESSAGE = true;
@@ -147,6 +161,7 @@ public class Constants {
     public static final String SORT="sort";
     public static final String COOKIE="Cookie";
     public static final String STATUS = "status";
+    public static final String STATUS_OK = "200";
     public static final String SERVER_TOKEN_TITLE="WDT=";
     public static final String SEMICOLON=";";
     public static final String NODE_LISTS="nodeLists";
@@ -286,6 +301,7 @@ public class Constants {
     public static String FILE_API_TYPE = "file";
     public static String USER_API_TYPE = "user";
     public static String TEST_DRIVE_API_TYPE = "testDrive";
+    public static String CAR_API_TYPE = "car";
 
     //rest api
     public static String SERVER_IS_EXIST_API = SERVER_URL + "/server/isExist";
@@ -293,33 +309,6 @@ public class Constants {
     public static String GET_CARS_INFO_BY_COMPANY_API = SERVER_URL + "/car/getCarsInfoByCompany";
     public static String GET_CARS_INFO_BY_ID_API = SERVER_URL + "/car/getCarsInfoById";
     public static String ORDER_TEST_DRIVE_API = SERVER_URL + "/testDrive/orderTestDrive";
-    public static String UPLOAD_IMAGE_API = SERVER_URL + "/file/uploadMergeImageMobile";
-
-
-//    public static String READ_PROJECT_LIST_REST_API = SERVER_URL + "/WADashboard/api/dashboard/v1/mainframes/readProjectList";
-//    public static String GET_WEBACCESS_PROJECT_LIST_API = SERVER_URL + "/WADashboard/api/dashboard/v6/waConfig/getWebAccessProjectList";
-//    public static String GET_VERSION_API = SERVER_URL + "/WADashboard/api/dashboard/v6/waConfig/getDashReVer";
-//    public static String GET_DASHBOARD_TOKEN_REST_API = SERVER_URL + "/WADashboard/api/dashboard/v6/auth/getToken";
-//    public static String GET_NODE_LIST_REST_API = SERVER_URL +"/WADashboard/api/dashboard/v1/tagAjaxAction/getNodeList";
-//    public static String GET_R_TREND_GROUP_ID_REST_API = SERVER_URL +"/WADashboard/api/dashboard/v1/tagAjaxAction/getRTrendGroupId";
-//    public static String GET_R_TREND_CONFIG_REST_API = SERVER_URL +"/WADashboard/api/dashboard/v1/tagAjaxAction/getRTrendConfig";
-//    public static String GET_TAGS_DATA_REST_API = SERVER_URL +"/WADashboard/api/dashboard/v1/tagAjaxAction/getTagsData";
-//    public static String ALARM_ACK_REST_API = SERVER_URL +"/WADashboard/api/dashboard/v1/tagAjaxAction/alarmAck";
-//    public static String ALARM_ACK_ALL_REST_API = SERVER_URL +"/WADashboard/api/dashboard/v1/tagAjaxAction/alarmAckAll";
-//    public static String GET_TAG_LIST_BY_PAGE_REST_API = SERVER_URL +"/WADashboard/api/dashboard/v1/tagAjaxAction/getTagListByPage";
-//    public static String SET_TAG_VALUES_REST_API = SERVER_URL +"/WADashboard/api/dashboard/v1/tagAjaxAction/setTagValues";
-//    public static String SUBSCRIBE_NOTIFY_REST_API = SERVER_URL +"/WADashboard/api/dashboard/v1/mobile/subscribeNotify";
-//    public static String UNSUBSCRIBE_NOTIFY_REST_API = SERVER_URL +"/WADashboard/api/dashboard/v6/mobile/unSubscribeNotify";
-//
-//    public static String GET_GOOGLE_MAP_LIST_REST_API = "/WADashboard/api/dashboard/v1/tagAjaxAction/getGoogleMapList";
-//    public static String GET_BAIDU_MAP_LIST_REST_API = "/WADashboard/api/dashboard/v1/tagAjaxAction/getBaiduMapList";
-//    public static String GET_GOOGLE_MAP_CONFIG_REST_API = "/WADashboard/api/dashboard/v1/tagAjaxAction/getGoogleMapConfig";
-//    public static String GET_BAIDU_MAP_CONFIG_REST_API = "/WADashboard/api/dashboard/v1/tagAjaxAction/getBaiduMapConfig";
-
-    //extraData
-    public static final String ACTION_EXTRA_KEY = "action";
-    public static final String ALARM_SUMMARY_EXTRA_VALUE = "alarmSummary";
-    public static final String NORMAL_EXTRA_VALUE = "normal";
 
     //loadview
     public static final int WIDTH_LOADING_VIEW = 150;

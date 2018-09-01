@@ -31,8 +31,10 @@ public class JavaScriptInterface {
     private WebView controlWebView;
     private JavaScriptInterface self = this;
     private Model controlModel;
+    private HttpClient controlHttpClient;
     private JSONObject localStorageMem;
     private ScrollView mainWebViewScroll;
+
 
     //web_local_param
     String carCompany;
@@ -50,6 +52,7 @@ public class JavaScriptInterface {
         controller = factory.createHomeController(controlActivity, controlWebView, self, Constants.HOME_PAGE_NAME);
         controller.executeCtrl();
         setListener();
+
 //        connectivityManager = (ConnectivityManager) controlActivity.getSystemService(Context.CONNECTIVITY_SERVICE);
 //        networkInfo = connectivityManager.getActiveNetworkInfo();
     }
@@ -60,6 +63,48 @@ public class JavaScriptInterface {
 
     private void createObj() {
         localStorageMem = new JSONObject();
+        controlHttpClient = factory.createHttpClient();
+        updateServerUrl();
+    }
+    public void updateServerUrl() {
+        controlHttpClient.updateServerUrl(this);
+    }
+
+    public void updateServerUrlResponse(boolean result,String receiveMessage) {
+        if (result) {
+            Constants.SERVER_URL = receiveMessage;
+            StringProcess.updateUrlPath();
+            controlHttpClient.checkServerIsExist(this);
+        }else{
+            sendMessage2SupportLine(Constants.SERVER_GIT_URL_ABMORMAL_SUPPORT);
+        }
+    }
+
+    public void checkServerIsExistResponse(boolean result, final String receiveMessage) {
+        if (result) {
+            if (controlModel.getHttpResult(receiveMessage)) {
+            } else {
+                sendMessage2SupportLine(Constants.SERVER_ABMORMAL_SUPPORT);
+            }
+        } else {
+            sendMessage2SupportLine(Constants.SERVER_ABMORMAL_SUPPORT);
+        }
+    }
+
+    public void sendMessage2SupportLine(String message){
+        controlHttpClient.sendMessage2SupportLine(Constants.LINE_SUPPORT_AUTH,message,this);
+    }
+
+    public void sendMessage2SupportLineResponse(boolean result,String receiveMessage){
+        if (result) {
+            if (controlModel.getHttpStatusResult(receiveMessage)) {
+                controlModel.toastString(Constants.SERVER_ABMORMAL);
+            } else {
+                controlModel.toastString(Constants.PLEASE_CHECK_NETWORK);
+            }
+        } else {
+            controlModel.toastString(Constants.PLEASE_CHECK_NETWORK);
+        }
     }
 
     public String getCarCompany(){

@@ -642,6 +642,24 @@ public class Model {
         }
     }
 
+    public boolean getHttpStatusResult(String receiveMessage) {
+        try {
+            JSONObject jsonObject = getJsonObject(receiveMessage);
+            if (jsonObject == null) {
+                return false;
+            } else {
+                String result = jsonObject.getString(Constants.STATUS);
+                if (result.equals(Constants.STATUS_OK)) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        } catch (JSONException e) {
+            return false;
+        }
+    }
+
     public String getJSONProtString(String protName, String JSONString) {
         JSONObject jsonObject = getJsonObject(JSONString);
         return getJSONProtString(protName, jsonObject);

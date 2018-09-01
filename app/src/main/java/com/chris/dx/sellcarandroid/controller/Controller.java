@@ -43,19 +43,6 @@ public class Controller {
         controlJavaScriptInterface = javaScriptInterface;
         controlModel = javaScriptInterface.getControlModel();
         controlHttpClient = factory.createHttpClient();
-        controlHttpClient.checkServerIsExist(this);
-    }
-
-    public void checkServerIsExistResponse(boolean result, final String receiveMessage) {
-        if (result) {
-            if (controlModel.getHttpResult(receiveMessage)) {
-//                controlModel.toastString("server is exist");
-            } else {
-//                controlModel.toastString("server is not exist");
-            }
-        } else {
-//            controlModel.toastString("server is not exist");
-        }
     }
 
     public void getLocalPathAllResponse(String result){
