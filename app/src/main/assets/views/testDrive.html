@@ -6,7 +6,9 @@
 		<link rel="stylesheet" href="../styles/bootstrap-3.3.7/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="../styles/common.css" />
 		<link rel="stylesheet" type="text/css" href="../styles/testDrive.css" />
+		<link rel="stylesheet" type="text/css" href="../styles/buttons/buttons.css" />
 		<script type="text/javascript" src="../scripts/lib/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="../scripts/lib/buttons/buttons.js"></script>
 		<script type="text/javascript" src="../scripts/util/callNativeInterface.js"></script>
 		<script type="text/javascript" src="../scripts/util/jsAppInterface.js"></script>
 		<script type="text/javascript" src="../scripts/page/testDrive.js"></script>
@@ -18,9 +20,12 @@
 	</head>
 	<body>
 		<div id="top">
-			<button id="company" class="btn btn-lg btn-success col-md-4 col-sm-4 col-xs-4 col-lg-4">車廠</button>
+			<!-- <button id="company" class="btn btn-lg btn-success col-md-4 col-sm-4 col-xs-4 col-lg-4">車廠</button>
 			<button id="poster" class="btn btn-lg btn-success col-md-4 col-sm-4 col-xs-4 col-lg-4">優惠</button>
-			<button id="price" class="btn btn-lg btn-success col-md-4 col-sm-4 col-xs-4 col-lg-4">價格</button>
+			<button id="price" class="btn btn-lg btn-success col-md-4 col-sm-4 col-xs-4 col-lg-4">價格</button> -->
+			<a id = "company" href="#" class="button button-3d-primary  col-md-4 col-sm-4 col-xs-4 col-lg-4">車廠</a>
+			<a id = "poster" href="#" class=" button button-3d-caution  col-md-4 col-sm-4 col-xs-4 col-lg-4">優惠</a>
+			<a id = "price" href="#" class="button button-3d-highlight  col-md-4 col-sm-4 col-xs-4 col-lg-4"> 價格</a>
 		</div>
 		<div id="content">
 			<div class="item col-md-12 col-sm-12 col-xs-12 col-lg-12">
@@ -70,7 +75,7 @@
 				</select>
 			</div>
 			<div class="item col-md-12 col-sm-12 col-xs-12 col-lg-12">
-				<button id="subscribe" class=" btn-success  col-md-6 col-sm-6 col-xs-6 col-lg-6">送出</button>
+				<a id="subscribe" href="#" class="button button-3d-action button-pill col-md-6 col-sm-6 col-xs-6 col-lg-6">進行預約</a>
 			</div>
 		</div>
 		<div id="bottom">

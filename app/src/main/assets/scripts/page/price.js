@@ -89,35 +89,48 @@ function responseFunc(functionType, result){
 		console.log(description)
 		console.log("======createCarItem======imgPath=================")
 		console.log(imgPath)
-		$('<br/>', {}).appendTo($('#content'));
+		// $('<br/>', {}).appendTo($('#content'));
+
+		var titleName =$('<div/>', {
+        	class: 'col-md-12 col-sm-12 col-xs-12 col-lg-12'
+    	}).appendTo($('#content'));
+    	titleName.html("車型: "+ name)
+
 		var item = $('<div/>', {
-			id:"item_"+id
+			id:"item_"+id,
+			class: 'col-md-12 col-sm-12 col-xs-12 col-lg-12'
     	}).appendTo($('#content'));
 		item.css('width','100%');
 		item.css('height','20%');
-
-
 		var img = $('<img/>', {
 			src: imgPath,
 			height: "100%",
-        	class: 'col-md-5 col-sm-5 col-xs-5 col-lg-5'
+        	class: 'col-md-6 col-sm-6 col-xs-6 col-lg-6'
     	}).appendTo(item);
 
-		img.css('background-color','yellow')
-
-
-    	var text =$('<div/>', {
-    		id:"text_"+id,
-        	class: 'col-md-4 col-sm-4 col-xs-4 col-lg-4'
+    	var priceText =$('<div/>', {
+    		id:"priceText"+id,
+    		// "text-align": "center",
+    		// "font-size": "2em",
+        	class: 'col-md-6 col-sm-6 col-xs-6 col-lg-6'
     	}).appendTo(item);
-    	var drive = $('<button/>', {
+    	priceText.html(special_price+"~"+price+"萬元");
+
+    	var descriptionText = $('<div/>', {
+        	class: 'col-md-7 col-sm-7 col-xs-7 col-lg-7'
+    	}).appendTo($('#content'));
+    	descriptionText.html(description)
+
+    	var drive = $('<a/>', {
     		id:"button_"+id,
     		value:id,
-        	class: 'col-md-3 col-sm-3 col-xs-3 col-lg-3 btn-success testDrive'
-    	}).appendTo(item);
-    	drive.html("試乘")
-    	text.html(description);
+    		href:"#",
+        	class: 'button button-3d-action button-pill col-md-5 col-sm-5 col-xs-5 col-lg-5 testDrive'
+    	}).appendTo($('#content'));
 
+    	drive.html("預約試乘")
+    	img.css("background-color","red");
+    	// text.css("background-color","yellow");
 	}
 
 
