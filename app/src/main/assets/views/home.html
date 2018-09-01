@@ -5,12 +5,14 @@
 		<title>home</title>
 		<link rel="stylesheet" type="text/css" href="../styles/common.css" />
 		<link rel="stylesheet" type="text/css" href="../styles/home.css" />
+		<link rel="stylesheet" type="text/css" href="../styles/buttons/buttons.css" />
 		<link rel="stylesheet" href="../styles/bootstrap-3.3.7/css/bootstrap.min.css">
 		<script type="text/javascript" src="../scripts/lib/jquery-3.1.1.min.js"></script>
 		<script src="../scripts/lib/bootstrap-3.3.7/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="../scripts/util/callNativeInterface.js"></script>
 		<script type="text/javascript" src="../scripts/util/jsAppInterface.js"></script>
 		<script type="text/javascript" src="../scripts/page/home.js"></script>
+		<script type="text/javascript" src="../scripts/lib/buttons/buttons.js"></script>
 		<script type="text/javascript">
 		$(document).ready(function(){
 			home.init();
@@ -22,9 +24,10 @@
 		</div>
 		<div id="content">
 			<button id = "nissan" class="btn btn-lg btn-success btn-block">nissan</button>
-			<button id = "toyota" class="btn btn-lg btn-success btn-block">toyota</button>
+			<!-- <button id = "toyota" class="btn btn-lg btn-success btn-block">toyota</button>
 			<button id = "honda" class="btn btn-lg btn-success btn-block">honda</button>
-			<button id = "reference" class="btn btn-lg btn-success btn-block">參考資料</button>
+			<button id = "reference" class="btn btn-lg btn-success btn-block">參考資料</button> -->
+			<a id = "reference"  href="#" class="button button-rounded button-highlight">參考資料</a>
 		</div>
 		<div id="bottom">
 			<div id="call" class=" col-md-12 col-sm-12 col-xs-12 col-lg-12">專業經理 蔣先生 電話:0912345678</button>

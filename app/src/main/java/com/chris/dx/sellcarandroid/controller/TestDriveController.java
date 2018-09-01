@@ -71,7 +71,7 @@ public class TestDriveController extends Controller {
     }
 
     private void getCarsInfoById(){
-//        controlModel.toastString("getCarsInfoById ing");
+//        controlModel.toastString("getCarsInfoById ing     favoriteCar "+favoriteCar);
         controlHttpClient.getCarsInfoById(favoriteCar,this);
     }
 

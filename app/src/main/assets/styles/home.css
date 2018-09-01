@@ -12,11 +12,22 @@
 #content{
 	position: relative;
 	width: 60%;
-	height: calc(45% - 2px);
+	height: 44%;
 	/*height: 44%;*/
 	margin-left:20%;
 	margin-right:20%;
 	
+	/*background-position: top;
+	background-repeat: no-repeat;
+	background-size: 100% auto;*/
+}
+
+#reference{
+	position: relative;
+	/*height: 44%;*/
+	margin-left:20%;
+	margin-right:20%;
+	margin-top: 10%;
 	/*background-position: top;
 	background-repeat: no-repeat;
 	background-size: 100% auto;*/

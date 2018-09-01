@@ -71,7 +71,7 @@ function responseFunc(functionType, result){
         }
         $('.testDrive').on('click',function(){
 			console.log("testDrive  click")
-			callNativeInterface.setFavoriteCar($(this).val());
+			callNativeInterface.setFavoriteCar($(this).attr('name'));
 			callNativeInterface.changePage("testDrivePage","");
 		});
 	};
@@ -114,6 +114,8 @@ function responseFunc(functionType, result){
     		// "font-size": "2em",
         	class: 'col-md-6 col-sm-6 col-xs-6 col-lg-6'
     	}).appendTo(item);
+    	priceText.css("font-size","2em")
+   
     	priceText.html(special_price+"~"+price+"萬元");
 
     	var descriptionText = $('<div/>', {
@@ -123,13 +125,13 @@ function responseFunc(functionType, result){
 
     	var drive = $('<a/>', {
     		id:"button_"+id,
-    		value:id,
+    		name:id,
     		href:"#",
         	class: 'button button-3d-action button-pill col-md-5 col-sm-5 col-xs-5 col-lg-5 testDrive'
     	}).appendTo($('#content'));
 
     	drive.html("預約試乘")
-    	img.css("background-color","red");
+    	// img.css("background-color","red");
     	// text.css("background-color","yellow");
 	}
 
