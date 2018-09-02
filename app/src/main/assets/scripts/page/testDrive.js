@@ -85,7 +85,7 @@ function responseFunc(functionType, result){
 			carColor = $('#carColor').val();
 			hopeTime = $('#hopeDate').val()+" "+$('#hopeTime').val();
 			if(name==""||phone==""){
-				callNativeInterface.toast("姓名、電話、公司&機構 未填寫");
+				callNativeInterface.toast("姓名、電話 未填寫");
 			}else{
 				callNativeInterface.orderTestDrive(name, company, phone, address, paymentType, carName, carCompany, carVersion, carColor, hopeTime);
 			}
