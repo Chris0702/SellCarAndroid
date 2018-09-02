@@ -9,9 +9,9 @@ public class Constants {
 //    public static String SERVER_URL = "http://172.18.2.42:81";
 //public static final String SERVER_URL = "http://172.18.2.42:3000";
 //public static final String SERVER_URL = "http://54.249.42.33:81";
-public static  String SERVER_URL = "";
+    public static  String SERVER_URL = "";
     public static final String GET_SERVER_URL_REST_API = "https://raw.githubusercontent.com/Chris0702/sellCarServer/master/lib/setting/server_url.txt";
-
+    public static final String VERSION_CONTENT = "1.0.0";
 
     //line
     public static final String LINE_NOTIFY_URL = "https://notify-api.line.me/api/notify";

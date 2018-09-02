@@ -32,16 +32,12 @@ public class MainWebViewFragment extends Fragment {
     private Factory factory = Factory.getInstance();
     private JavaScriptInterface controlJavaScriptInterface;
     private ScrollView mainWebViewScroll;
-    private boolean isAlarmSummary;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View returnView = inflater.inflate(R.layout.main_webview, container, false);
-//        isAlarmSummary=false;
         createObj(returnView);
-//        setListener();
-//        controlModel.logSystemInfoDB();
         return returnView;
     }
 
@@ -49,11 +45,11 @@ public class MainWebViewFragment extends Fragment {
     public void onResume() {
         Log.d("debug","MainWebViewFragment    onResume");
         super.onResume();
+        controlJavaScriptInterface.updateServerUrl();
     }
 
 
     private void createObj(View view) {
-        //factory = new Factory();
         controlModel = factory.createModel(getActivity());
         mainWebView = (WebView) view.findViewById(R.id.mainWebviewContent);
         mainWebViewScroll = ((ScrollView) view.findViewById(R.id.mainWebviewScroll));

@@ -83,6 +83,9 @@ public class JavaScriptInterface {
     public void checkServerIsExistResponse(boolean result, final String receiveMessage) {
         if (result) {
             if (controlModel.getHttpResult(receiveMessage)) {
+                if(controller!=null){
+                    controller.executeCtrl();
+                }
             } else {
                 sendMessage2SupportLine(Constants.SERVER_ABMORMAL_SUPPORT);
             }
