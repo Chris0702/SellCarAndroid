@@ -6,12 +6,12 @@
     function callIosNativeApp(funcName, msg) {
         var iosMsg = JSON.stringify({ "funcName": funcName, "msg": msg });
         try {
-            console.log('call ios native');
             if (webkit && webkit.messageHandlers && webkit.messageHandlers.callIosNativeApp) {
                 webkit.messageHandlers.callIosNativeApp.postMessage(iosMsg);
             }
         } catch (err) {
             console.log('The ios native context does not exist yet');
+            console.log(err)
         }
     }
 
@@ -19,10 +19,13 @@
     var callNativeInterface = new Object();
 
     callNativeInterface.toast = function(toastString) {
+        var cbObj = {};
+        cbObj.msg = toastString;
+        var cbJsonStr = JSON.stringify(cbObj);
         if (typeof(appJsInterface) != 'undefined') {
             appJsInterface.toast(toastString);
         } else {
-            callIosNativeApp('changePage', cbJsonStr);
+            callIosNativeApp('toast', cbJsonStr);
         }
     };
 
@@ -35,7 +38,7 @@
             console.log('!!!!!!!!!!!!!setFavoriteCar!!!!!!appJsInterface!!!!!!!!!!');
             appJsInterface.setFavoriteCar(cbJsonStr);
         } else {
-            callIosNativeApp('changePage', cbJsonStr);
+            callIosNativeApp('setFavoriteCar', cbJsonStr);
         }
     };
 
@@ -45,7 +48,7 @@
             console.log('!!!!!!!!!!!!!getCarsInfoById!!!!!!appJsInterface!!!!!!!!!!');
             appJsInterface.getCarsInfoById();
         } else {
-            callIosNativeApp('changePage', );
+            callIosNativeApp('getCarsInfoById', '');
         }
     };
 
@@ -55,7 +58,7 @@
             console.log('!!!!!!!!!!!!!getCarsInfoByCompany!!!!!!appJsInterface!!!!!!!!!!');
             appJsInterface.getCarsInfoByCompany();
         } else {
-            callIosNativeApp('changePage', cbJsonStr);
+            callIosNativeApp('getCarsInfoByCompany', '');
         }
     };
 
@@ -77,7 +80,7 @@
             console.log('!!!!!!!!!!!!!orderTestDrive!!!!!!appJsInterface!!!!!!!!!!');
             appJsInterface.orderTestDrive(cbJsonStr);
         } else {
-            callIosNativeApp('changePage', cbJsonStr);
+            callIosNativeApp('orderTestDrive', cbJsonStr);
         }
     };
 
@@ -114,7 +117,7 @@
             console.log('!!!!!!!!!!!!!getCarImagePathByFolder!!!!!!appJsInterface!!!!!!!!!!');
             appJsInterface.getCarImagePathByFolder(cbJsonStr);
         } else {
-            // callIosNativeApp('changePage', );
+            callIosNativeApp('getCarImagePathByFolder', cbJsonStr);
         }
     };
 
