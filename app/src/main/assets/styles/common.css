@@ -1,11 +1,12 @@
 body{
-	background-position: bottom;
+/*	background-position: bottom;
 	background-repeat: no-repeat;
 	background-size: 100% auto;
-	width: 100%;
-	background-image: url(../image/background.png);
+	width: 100%;*/
+	background-color: 	#BBFFFF;
+	/*background-image: url(../image/background.png);*/
 	/*background-image: url(../image/3.png);*/
-	background-size: cover;
+	/*background-size: cover;*/
 	/*position: absolute;*/
 	/*min-width:320px;*/
 }
